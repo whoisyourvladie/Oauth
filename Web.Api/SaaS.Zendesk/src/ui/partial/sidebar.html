@@ -1,0 +1,36 @@
+<div data-ng-sidebar>
+    <nav class="navbar navbar-light pt-0 pl-0">
+        <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <nav class="navbar navbar-light pt-0 pl-0">
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <div data-ng-hide="$auth.isAuthenticated()">
+                <button type="button" class="btn btn-primary btn-sm" data-ng-click="signIn()">Sign in</button>
+            </div>
+            <div data-ng-show="$auth.isAuthenticated()">
+                <form name="accountSearchForm" data-ng-submit="search(accountSearchForm)" novalidate>
+                    <div class="input-group input-group-sm mb-1">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Filter</span>
+                        </div>
+                        <input type="text" class="form-control" data-ng-model="model.search.filter">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary btn-sm" value="Search">Search</button>
+                        </div>
+                    </div>
+                    <div data-ng-show="status === 404" class="alert alert-danger" role="alert">
+                        Customer doesn't exists.
+                    </div>
+                </form>
+                <button type="button" class="btn btn-primary btn-sm mt-1" data-ng-click="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@{ var routes = new { id = Request["id"] }; }
+
+@Html.PageHeader("Add product")
+@Html.Partial("~/Views/Account/Partial/Account.cshtml")
+
+<div class="row">
+    <div class="col-lg-6">
+        <div data-ng-controller="accountAddProductController" data-ng-init="init('@Url.Action("products", "account", routes)')" data-ng-show="model.account && !model.account.isDeleted" data-ng-cloak>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form name="form" data-ng-init="form=form" data-ng-submit="submit(form)" data-ng-loading-form data-ng-autocomplete>
+                        <div class="form-group">
+                            <label>Product</label>
+                            <select name="product" class="form-control" data-ng-model="model.product" data-ng-options="y.productName for (x, y) in model.products"></select>
+                        </div>
+
+                        <div data-ng-form-validation-group>
+                            <label for="price">Price per license *</label>
+                            <input type="text" name="price" placeholder="Price per license *" data-ng-model="model.price" data-ng-model-options="{ updateOn: 'blur' }" />
+                        </div>
+                        @FormField.Currency()
+
+                        <div data-ng-form-validation-group>
+                            <label for="priceUsd">Price per license *(USD)</label>
+                            <input type="text" name="priceUsd" placeholder="Price per license *(USD)" data-ng-model="model.priceUsd" data-ng-model-options="{ updateOn: 'blur' }" />
+                        </div>
+                        <div data-ng-form-validation-group>
+                            <label for="quantity">Number of licenses needed *</label>
+                            <input type="number" name="quantity" placeholder="Number of licenses needed *" data-ng-model="model.quantity" data-ng-model-options="{ updateOn: 'blur' }" min="1" max="9999" maxlength="4" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-sm" value="Add product"></button>
+                        <a class="btn btn-default btn-sm btn-space" href="@Url.Action("products", "account", routes)">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

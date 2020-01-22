@@ -1,0 +1,50 @@
+﻿<div class="panel panel-default" data-ng-if="isVisible">
+    <div class="panel-heading clearfix">
+        @Button.Close()
+    </div>
+    <div class="panel-body">
+        <form name="form" data-ng-init="form=form" data-ng-submit="submit(form)" data-ng-loading-form data-ng-autocomplete>
+            <div class="row">
+                <div class="col-sm-6" data-ng-repeat="account in model.accounts">
+                    <div class="panel" data-ng-class="{'panel-success': account.isActive, 'panel-default': !account.isActive}">
+                        <div class="panel-heading clearfix">
+                            <span data-ng-bind="::account.firstName"></span>
+                            <span data-ng-bind="::account.lastName"></span>
+                            <span ng-account-type="::account.status"></span>
+                            <span ng-account-activated="::account.status"></span>
+
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-primary btn-xs btn-space" data-ng-click="remove($index)">
+                                    <i class="far fa-times-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <span data-ng-class="{'label label-danger': account.isActiveEmail}" data-ng-bind="::account.email"></span>
+                        </div>
+                        <div class="panel-footer">
+                            <button type="button" class="btn btn-primary btn-xs btn-space" data-ng-click="select($index)" data-ng-hide="account.isActive">Set primary account</button>
+                            <button type="button" class="btn btn-primary btn-xs btn-space" data-ng-click="selectEmail($index)" data-ng-hide="account.isActiveEmail">Set primary email</button>
+                            <span class="label label-danger" data-ng-show="account.isActive">
+                                <i class="fas fa-star" data-ng-show="account.isActive"></i> Primary account
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-ng-show="model.accounts.length == 2">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" data-ng-model="model.openCustomerInfoAfterMerge">Open customer's info after merge
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-sm" value="Merge"></button>
+                        <button type="button" class="btn btn-default btn-sm btn-space" data-ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

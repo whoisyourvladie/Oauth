@@ -1,0 +1,667 @@
+﻿{
+  "MetaData": {
+    "Version": 0,
+    "LastUpdateTime": "1970-01-01T00:00:00"
+  },
+  "General": {
+    "Hibernate on close": true,
+    "Enable JavaScript execution": true,
+    "Show splash of second application instance": false,
+    "Enable window shading by modal dialog": true,
+    "Leave fullscreen mode on close all docs": true,
+    "Allow document panels reordering": true,
+    "Show calibration hint dialog": true,
+    "Show search and redact hint": true,
+    "Recent colors": "",
+    "Custom colors": "",
+    "Last Color Highlight": -5573,
+    "Last Color StrikeOut": -51420,
+    "Last Color Underline": -11220995,
+    "MessageBox truncated name length": 21,
+    "Custom Tab Capacity": 24,
+    "OCR Engine": 1,
+    "DocAuthor": "",
+    "Optimized save quality": 2,
+    "Autoopen extracted document": false
+  },
+  "RecentDocuments": {
+    "Default View": 0,
+    "Check recent document path": false
+  },
+  "ResearchOpenedDocuments": {
+    "Enable": true,
+    "MaxNotifications": 1,
+    "AtDocOpen": {
+      "NumPagesToCheck": 3,
+      "CheckLastPage": 1,
+      "CheckPermissionsPW": 2,
+      "CheckRecognizableImages": 3,
+      "CheckAttachments": 4,
+      "CheckSignature": 5,
+      "CheckComments": 6
+    },
+    "AtPageLoad": {
+      "CheckRecognizableImages": true,
+      "CheckComments": true
+    }
+  },
+  "Fonts": {
+    "Default": {
+      "Family": "Times New Roman",
+      "Format": 1,
+      "Size": 12,
+      "Bold": false,
+      "Italic": false,
+      "Color": "#000000",
+      "Opacity": 100,
+      "Rotation": 0
+    },
+    "Size Min": 1,
+    "Size Max": 1638
+  },
+  "Layout": {
+    "View State": 2,
+    "Page View": 2,
+    "Units": 2,
+    "Page Size": 9,
+    "Fullscreen": false
+  },
+  "Snapping": {
+    "Threshold": "5",
+    "Default vertical distance": "10",
+    "Default horizontal distance": "10"
+  },
+  "LookAndFeel": {
+    "Transformer anchor radius": "4",
+    "Transformer origin radius": "7",
+    "Transformer scale zone radius": "6",
+    "Transformer rotate zone radius": "20",
+    "Snap lines color": -44224,
+    "Snap guides color": 2130706687,
+    "Snap active guide color": -16776961,
+    "Grid show only dots": false,
+    "Grid lines color": 520093696,
+    "Annotation transformer frame color": -6599975,
+    "Annotation transformer highlight color": 1056964608,
+    "Multiselect transformer frame color": -6932681,
+    "Multiselect transformer object color": 1828696743,
+    "Text copy selection color": 1610547200,
+    "Text edit selection color": 1610547200,
+    "Text transformer frame color": -8092540,
+    "Text transformer highlight color": 1056964608,
+    "Image transformer frame color": -65536,
+    "Image transformer clipping color": 1073676288,
+    "Image transformer highlight color": 1056964608,
+    "Clip edit transformer frame color": -6288886,
+    "Clip edit transformer object color": 866126346,
+    "Clip edit transformer highlight color": 1056964608,
+    "Clip creation frame color": -65536,
+    "Image crop transformer frame color": -16119286,
+    "Image crop transformer object color": -65536,
+    "Image crop transformer area color": -1610612737,
+    "Widget creation frame color": -2581205,
+    "Crop selection color": -1218456,
+    "Signature appearance title color": "#d10000",
+    "Format painter selection color": -2130771968
+  },
+  "Measurement": {
+    "Leader length": 15,
+    "Leader extension above line": 5,
+    "Leader offset from line points": 0,
+    "Use as default": false,
+    "Caption style": "inside",
+    "Use Scale and Units from document (when present)": true,
+    "Use orthographic lines": false,
+    "Use default label": true,
+    "Custom label": ""
+  },
+  "Shapes": {
+    "Line": {
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -33674,
+      "Opacity": 100,
+      "InteriorColor": -33674,
+      "BlendMode": 0,
+      "ArrowStart": 0,
+      "ArrowEnd": 0
+    },
+    "PolyLine": {
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -33674,
+      "Opacity": 100,
+      "InteriorColor": 0,
+      "BlendMode": 0,
+      "ArrowStart": 0,
+      "ArrowEnd": 0
+    },
+    "Polygon": {
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -33674,
+      "Opacity": 100,
+      "InteriorColor": 0,
+      "BlendMode": 0
+    },
+    "Square": {
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -33674,
+      "Opacity": 100,
+      "InteriorColor": 0,
+      "BlendMode": 0
+    },
+    "Circle": {
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -33674,
+      "Opacity": 100,
+      "InteriorColor": 0,
+      "BlendMode": 0
+    },
+    "LineDimension": {
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -1760713,
+      "Opacity": 100,
+      "InteriorColor": -1760713,
+      "BlendMode": 0,
+      "ArrowStart": 2,
+      "ArrowEnd": 2
+    },
+    "PolyLineDimension": {
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -1760713,
+      "Opacity": 100,
+      "InteriorColor": -1760713,
+      "BlendMode": 0,
+      "ArrowStart": 0,
+      "ArrowEnd": 0
+    },
+    "PolygonDimension": {
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -1760713,
+      "Opacity": 100,
+      "InteriorColor": 0,
+      "BlendMode": 0
+    }
+  },
+  "Forms": {
+    "HighlightColor": 1056964608,
+    "TextField": {
+      "Size": {
+        "Width": 151,
+        "Height": 20
+      },
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -5526093,
+      "BgColor": -1,
+      "Highlight": 1,
+      "TextAlignment": 0,
+      "Multiline": false,
+      "Password": false,
+      "Tooltip": "",
+      "FontType": "Times New Roman",
+      "FontSize": 12,
+      "FontColor": -12303292,
+      "FontModifier": 0
+    },
+    "ListBox": {
+      "Size": {
+        "Width": 100,
+        "Height": 73
+      },
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -5526093,
+      "BgColor": -1,
+      "Highlight": 1,
+      "TextAlignment": 0,
+      "Tooltip": "",
+      "FontType": "Times New Roman",
+      "FontSize": 12,
+      "FontColor": -12303292,
+      "FontModifier": 0
+    },
+    "ComboBox": {
+      "Size": {
+        "Width": 73,
+        "Height": 20
+      },
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -5526093,
+      "BgColor": -1,
+      "Highlight": 1,
+      "TextAlignment": 0,
+      "Tooltip": "",
+      "FontType": "Times New Roman",
+      "FontSize": 12,
+      "FontColor": -12303292,
+      "FontModifier": 0
+    },
+    "Button": {
+      "Size": {
+        "Width": 73,
+        "Height": 20
+      },
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -933296,
+      "BgColor": -4668,
+      "Highlight": 1,
+      "Tooltip": "",
+      "FontType": "Arial",
+      "FontSize": 0,
+      "FontColor": -11645362,
+      "FontModifier": 0
+    },
+    "CheckBox": {
+      "Size": {
+        "Width": 15,
+        "Height": 15
+      },
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -5526093,
+      "BgColor": -1,
+      "Highlight": 1,
+      "Caption": "6",
+      "Tooltip": "",
+      "FontSize": 0,
+      "FontColor": -33674
+    },
+    "RadioButton": {
+      "Size": {
+        "Width": 15,
+        "Height": 15
+      },
+      "BorderStyle": 0,
+      "BorderWidth": 1,
+      "Color": -5526093,
+      "BgColor": -1,
+      "Highlight": 1,
+      "Caption": "l",
+      "Tooltip": "",
+      "FontSize": 0,
+      "FontColor": -33674
+    },
+    "DigitalSignature": {
+      "Size": {
+        "Width": 73,
+        "Height": 20
+      },
+      "BorderStyle": 0,
+      "BorderWidth": 0,
+      "Color": 0,
+      "BgColor": 0,
+      "Highlight": 1,
+      "Tooltip": "",
+      "FontType": "Arial",
+      "FontSize": 0,
+      "FontColor": -12303292,
+      "FontModifier": 0
+    }
+  },
+  "StickerNote": {
+    "Color": -33674,
+    "Opacity": 100,
+    "BlendMode": 0
+  },
+  "Ink": {
+    "BorderStyle": 0,
+    "BorderWidth": 1,
+    "Color": -33674,
+    "Opacity": 100,
+    "BlendMode": 0
+  },
+  "Links": {
+    "BorderStyle": 0,
+    "BorderWidth": 1,
+    "Color": -16777216,
+    "BlendMode": 0
+  },
+  "Redaction": {
+    "Redacted Area Fill Color": -16777216,
+    "Redaction Mark Outline": {
+      "Redaction Mark Outline Color": -65536,
+      "Redaction Mark Outline Border": 1
+    },
+    "Redaction Mark Fill": {
+      "Redaction Mark Fill Color": 0,
+      "Redaction Mark Fill Opacity": 100
+    },
+    "BlendMode": 0
+  },
+  "PageSize": {
+    "Units": 1,
+    "SizeId": 0,
+    "Custom": {
+      "Width": 0,
+      "Height": 0
+    }
+  },
+  "PageMargins": {
+    "Units": 1,
+    "Margins": {
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0
+    }
+  },
+  "InsertPageNumbers": {
+    "PageRange": 0,
+    "PageRangeData": "",
+    "Font": {
+      "Family": "Arial",
+      "Format": 1,
+      "Size": 42,
+      "Bold": false,
+      "Italic": false,
+      "Color": "#000000",
+      "Opacity": 100,
+      "Rotation": 0
+    },
+    "FontSizeMax": 720,
+    "Number format": 0,
+    "Position": 4,
+    "Start At": 1
+  },
+  "Background": {
+    "PageRange": 0,
+    "PageRangeData": "",
+    "Background Color": ""
+  },
+  "SignDocument": {
+    "Appearance": 0,
+    "ItemPath": "",
+    "Reason": 0,
+    "Certificate": 0,
+    "TimeStamp": true,
+    "SignatureSize": {
+      "Width": 185,
+      "Height": 140
+    }
+  },
+  "Watermark": {
+    "Position": -1,
+    "BehindContent": false,
+    "Text": "",
+    "FontSizeMax": 720,
+    "Font": {
+      "Family": "Arial",
+      "Format": 1,
+      "Size": 42,
+      "Bold": false,
+      "Italic": false,
+      "Color": "#000000",
+      "Opacity": 100,
+      "Rotation": 0
+    },
+    "PageRange": 0,
+    "PageRangeSubset": 2,
+    "PageRangeData": ""
+  },
+  "HeaderAndFooter": {
+    "Units": 2,
+    "Position": 0,
+    "ShrinkDocument": false,
+    "Margin": {
+      "Left": "72",
+      "Top": "36",
+      "Right": "72",
+      "Bottom": "36"
+    },
+    "Text": {
+      "Top": "",
+      "TopL": "",
+      "TopR": "",
+      "Bottom": "",
+      "BottomL": "",
+      "BottomR": ""
+    },
+    "Font": {
+      "Top": {
+        "Family": "Arial",
+        "Format": 1,
+        "Size": 16,
+        "Bold": false,
+        "Italic": false,
+        "Color": "#000000",
+        "Opacity": 100,
+        "Rotation": 0
+      },
+      "TopL": {
+        "Family": "Arial",
+        "Format": 1,
+        "Size": 16,
+        "Bold": false,
+        "Italic": false,
+        "Color": "#000000",
+        "Opacity": 100,
+        "Rotation": 0
+      },
+      "TopR": {
+        "Family": "Arial",
+        "Format": 1,
+        "Size": 16,
+        "Bold": false,
+        "Italic": false,
+        "Color": "#000000",
+        "Opacity": 100,
+        "Rotation": 0
+      },
+      "Bottom": {
+        "Family": "Arial",
+        "Format": 1,
+        "Size": 16,
+        "Bold": false,
+        "Italic": false,
+        "Color": "#000000",
+        "Opacity": 100,
+        "Rotation": 0
+      },
+      "BottomL": {
+        "Family": "Arial",
+        "Format": 1,
+        "Size": 16,
+        "Bold": false,
+        "Italic": false,
+        "Color": "#000000",
+        "Opacity": 100,
+        "Rotation": 0
+      },
+      "BottomR": {
+        "Family": "Arial",
+        "Format": 1,
+        "Size": 16,
+        "Bold": false,
+        "Italic": false,
+        "Color": "#000000",
+        "Opacity": 100,
+        "Rotation": 0
+      }
+    },
+    "FontSizeMax": 720,
+    "PageRange": 0,
+    "PageRangeSubset": 2,
+    "PageRangeData": ""
+  },
+  "BatesN": {
+    "NumGen": {
+      "IncrementAll": false,
+      "Prefix": "",
+      "StartAt": "000001",
+      "Suffix": "",
+      "PageRange": 0,
+      "PageRangeData": ""
+    },
+    "Advanced": {
+      "Units": 2,
+      "Position": 8,
+      "BehindContent": false,
+      "IncreasePageSize": false,
+      "Margin": {
+        "Left": "72",
+        "Top": "72",
+        "Right": "72",
+        "Bottom": "72"
+      },
+      "Font": {
+        "Family": "Arial",
+        "Format": 1,
+        "Size": 16,
+        "Bold": false,
+        "Italic": false,
+        "Color": "#000000",
+        "Opacity": 100,
+        "Rotation": 0
+      },
+      "FontSizeMax": 720,
+      "Sample": "Bates Numbering"
+    },
+    "Files": {
+      "Naming": 0,
+      "OverwriteExisting": true,
+      "Prefix": "",
+      "Suffix": ""
+    }
+  },
+  "CropPages": {
+    "PageBox": 0,
+    "Units": 2,
+    "Margin": {
+      "Left": "0",
+      "Top": "0",
+      "Right": "0",
+      "Bottom": "0"
+    },
+    "PageRange": 0,
+    "PageRangeSubset": 2,
+    "PageRangeData": ""
+  },
+  "Print": {
+    "PageRange": 0,
+    "PageRangeData": "",
+    "PageSubject": -1,
+    "PageReverse": false,
+    "Copies": 1,
+    "Orientation": 0,
+    "ColorMode": 2,
+    "Collate": true,
+    "PrintToFile": false,
+    "PrinterName": "",
+    "PaperSizeId": 0,
+    "PaperSourceId": 0,
+    "DocumentContentType": 0,
+    "Autorotate": true,
+    "Center": true,
+    "Fit": 1,
+    "ViewState": 0,
+    "DuplexMode": false,
+    "DuplexBinding": 1,
+    "Use actual dimentions for Paper Size": false,
+    "TileScale": 1,
+    "Overlap": "1",
+    "TileLarge": true,
+    "PagesPerSheet": 0,
+    "PagesColumn": 0,
+    "PagesRow": 0,
+    "PageOrder": 0,
+    "PrintImageBorder": true,
+    "BothSidePrint": true,
+    "BookletSubset": 2,
+    "SheetsFrom": 0,
+    "SheetsTo": 0,
+    "Binding": 0
+  },
+  "PrintSelection": {
+    "PageRange": 0,
+    "PageRangeData": "",
+    "PageSubject": -1,
+    "PageReverse": false,
+    "Copies": 1,
+    "Orientation": 1,
+    "ColorMode": 2,
+    "Collate": true,
+    "PrintToFile": false,
+    "PrinterName": "",
+    "PaperSizeId": 0,
+    "PaperSourceId": 0,
+    "DocumentContentType": 0,
+    "Autorotate": false,
+    "Center": false,
+    "Fit": 0,
+    "ViewState": 0,
+    "DuplexMode": false,
+    "DuplexBinding": 1,
+    "Use actual dimentions for Paper Size": false,
+    "TileScale": 1,
+    "Overlap": "1",
+    "TileLarge": true,
+    "PagesPerSheet": 0,
+    "PagesColumn": 0,
+    "PagesRow": 0,
+    "PageOrder": 0,
+    "PrintImageBorder": true,
+    "BothSidePrint": true,
+    "BookletSubset": 2,
+    "SheetsFrom": 0,
+    "SheetsTo": 0,
+    "Binding": 0
+  },
+  "OCR": {
+    "Use OCR while scanning a document": false
+  },
+  "TESS OCR": {
+    "Recognition parameters": {
+      "Language": "",
+      "Recognition Quality": 0
+    },
+    "Image pre-processing parameters": {
+      "Orientation and Script Detection": true,
+      "Deskew": true,
+      "Rotate Page": true,
+      "Detect Text Orientation": true
+    },
+    "Formatting parameters": {
+      "PDF Type": 2,
+      "Output Quality": 4
+    }
+  },
+  "Spelling": {
+    "Check spelling while typing": true,
+    "Preferable spelling engine ( 0 - windows, 1 - hunspell)": 0,
+    "Min number of words in spellcheck to warn user": 10,
+    "Spelling Underline": {
+      "Spelling Underline Color": "#FF0F0F",
+      "Spelling Underline Width": "1.2",
+      "Spelling Underline Delta": "2.3",
+      "Spelling Underline Period": "2"
+    },
+    "Spelling Language": {
+      "Hunspell Preferred Language": "en-US",
+      "WinApi Preferred Language": "en",
+      "Detect language automatically": true
+    }
+  },
+  "Evernote": {
+    "Verify peer": false,
+    "Use only web connection": false
+  },
+  "eSign": {
+    "Last package number": 1,
+    "Last template number": 1,
+    "Contacts obsolescence period": 300
+  },
+  "SharePoint": {
+    "CheckOut automatically": true,
+    "CheckIn automatically": true,
+    "Default SignIn URL": ""
+  }
+}

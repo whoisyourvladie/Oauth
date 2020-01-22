@@ -1,0 +1,16 @@
+﻿@helper Refresh()
+{
+    <div class="pull-right">
+        <button type="button" class="btn btn-primary btn-xs btn-space" data-ng-click="refresh()">
+            <i data-ng-class="{'fa-spin' : isBusy}" class='fas fa-sync-alt'></i>
+        </button>
+    </div>
+}
+@helper Close()
+{
+    <div class="pull-right">
+        <button type="button" class="btn btn-primary btn-xs btn-space" data-ng-click="close()">
+            <i class="far fa-times-circle"></i>
+        </button>
+    </div>
+}

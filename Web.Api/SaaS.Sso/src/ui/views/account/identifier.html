@@ -1,0 +1,21 @@
+<div class="title">
+    <h3 translate="Sign in"></h3>
+    <p translate="{{::subTitle}}"></p>
+</div>
+<form name="identifierForm" data-ng-submit="submit(identifierForm)" novalidate>
+    <div class="form-group">
+        <div class="form-effect">
+            <label>Email</label>
+            <input type="text" name="email" class="form-control form-control-lg" data-ng-model="model.email"
+                data-ng-change="status=null" maxlength="100" required data-ng-focus>
+
+        </div>
+        <p class="text-left text-danger mt-1">
+            <small translate="{{::errorNotFound}}" data-ng-show="status===404"></small>
+            <small translate="Enter an email"
+                data-ng-show="identifierForm.email.$touched && identifierForm.email.$error.required"></small>
+        </p>
+    </div>
+
+    <button class="btn btn-primary float-right" type="submit" translate="Next"></button>
+</form>

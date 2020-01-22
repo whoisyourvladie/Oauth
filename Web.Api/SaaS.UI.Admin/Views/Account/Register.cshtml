@@ -1,0 +1,29 @@
+﻿@Html.PageHeader("Create a new customer")
+
+<div data-ng-controller="accountRegisterController" data-ng-cloak>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading clearfix"></div>
+                <div class="panel-body">
+                    <div data-ng-hide="model.account.id">
+                        <form name="form" data-ng-init="form=form" data-ng-submit="submit(form)" data-ng-loading-form data-ng-autocomplete="off">
+                            @AccountFormField.FirstName()
+                            @AccountFormField.LastName()
+                            @AccountFormField.Email()
+
+                            <button type="submit" class="btn btn-primary btn-sm" value="Register"></button>
+                        </form>
+                    </div>
+                    <div data-ng-show="model.account.id" class="alert alert-info alert-dismissable">
+                        Customer has been successfully created.
+                        For more information click 
+                        <a href="@Url.Action("index", "account")/?id={{model.account.id}}" class="btn btn-primary btn-xs btn-space">
+                            <i class='fa fa-info'></i> More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

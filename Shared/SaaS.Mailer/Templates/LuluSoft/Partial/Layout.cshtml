@@ -1,0 +1,200 @@
+﻿@model SaaS.Mailer.Models.Notification
+
+@using General = SaaS.Mailer.Templates.LuluSoft.App_GlobalResources.General;
+@using SaaS.Mailer;
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="http://sodapdf.com/images/favicon.ico" type="image/x-icon" />
+    <title>Soda PDF Anywhere</title>
+    <style type="text/css">
+        #outlook a {
+            padding: 0;
+        }
+
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            }
+
+        img {
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        a {
+            color: #999999;
+        }
+
+            a img {
+                border: none;
+            }
+
+        p {
+            margin: 0 0 1em 0;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+    </style>
+</head>
+<body id="outlook" style="padding:0; margin:0; background-color:#ffffff; font:15px/22px Arial, Helvetica, sans-serif">
+    <table cellpadding="0" cellspacing="0" bgcolor="#f7f7f7" border="0" width="100%" align="center">
+        <tr>
+            <td align="center">
+                <table cellpadding="0" cellspacing="0" bgcolor="#f7f7f7" border="0" width="626" align="center">
+                    <tr>
+                        <td height="31" valign="middle" width="300" style="font:bold 11px Arial; line-height: 11px; color:#9c9c9c">**subject**</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="100%">
+        <tr>
+            <td>
+                @*<table cellpadding="0" cellspacing="0" width="100%" align="center">
+                        <tr>
+                            <td width="10">&nbsp;</td>
+                            <td align="center" style="padding-bottom: 15px;">
+                                <table cellpadding="0" cellspacing="0" border="0" width="626" align="center">
+                                    <tr>
+                                        <td width="396" style="color:#888888; font:11px/21px arial;">Can’t view this e-mail? Try the <a href="#" style="color:#888888; font:11px/21px arial;">Web version</a>.</td>
+                                        <td width="230">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                                                <tr>
+                                                    <td align="right">
+                                                        <table cellpadding="0" cellspacing="0" border="0" width="230" align="right">
+                                                            <tr>
+                                                                <td><a href="#"><img src="http://sodapdf.com/newsletter/2016/Jul/en/images/lang/en.jpg" style="display:block; border:none" width="35" height="12" alt="EN" /></a></td>
+                                                                <td width="14">&nbsp;</td>
+                                                                <td><a href="#"><img src="http://sodapdf.com/newsletter/2016/Jul/en/images/lang/fr.jpg" style="display:block; border:none" width="36" height="12" alt="FR" /></a></td>
+                                                                <td width="14">&nbsp;</td>
+                                                                <td><a href="#"><img src="http://sodapdf.com/newsletter/2016/Jul/en/images/lang/de.jpg" style="display:block; border:none" width="36" height="12" alt="DE" /></a></td>
+                                                                <td width="14">&nbsp;</td>
+                                                                <td><a href="#"><img src="http://sodapdf.com/newsletter/2016/Jul/en/images/lang/it.jpg" style="display:block; border:none" width="32" height="12" alt="IT" /></a></td>
+                                                                <td width="14">&nbsp;</td>
+                                                                <td><a href="#"><img src="http://sodapdf.com/newsletter/2016/Jul/en/images/lang/es.jpg" style="display:block; border:none" width="35" height="12" alt="ES" /></a></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="10">&nbsp;</td>
+                        </tr>
+                    </table>*@
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                    <tr>
+                        <td align="center">
+                            <table cellpadding="0" cellspacing="0" border="0" width="640" align="center">
+                                <tr><td colspan="2" height="13" style="font-size:0; line-height:0;">&nbsp;</td></tr>
+                                <tr>
+                                    <td width="140" height="62"><a class="links" href="https://sodapdf.com/?lang=en"><img src="https://www.sodapdf.com/images/emails/logo.png" style="display:block; border:none" width="139" height="62" alt="Soda&nbsp;PDF" /></a></td>
+                                    <td width="500">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                                            <tr>
+                                                <td align="right" style="color:#6b6b6b; color:#8b59cf; font:bold 26px/35px arial; padding:10px 5px 10px 0;">
+                                                    @General.account
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" height="20" style="font-size:0; line-height:0;">&nbsp;</td></tr>
+                            </table>
+                            <table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="640" align="center" style="border-top:2px solid #8b59cf">
+                                <tr><td colspan="2" height="16" style="font-size:0; line-height:0;">&nbsp;</td></tr>
+                                <tr>
+                                    <td width="320" align="left" style="font: 16px/18px Arial; color:#383838; text-decoration: none;">
+                                        <span style="font: 16px/18px Arial; color:#383838; text-decoration: none;">@Model.Email</span>
+                                    </td>
+                                    <td width="320" align="right" style="font: 16px/18px Arial"><a class="links" href="@links.account" style="color:#4b79f4; text-decoration:underline;">@General.myAccount</a></td>
+                                </tr>
+                                <tr><td colspan="2" height="16" style="font-size:0; line-height:0;">&nbsp;</td></tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                </table>
+                <table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="100%" align="center">
+                    <tr>
+                        <td width="10">&nbsp;</td>
+                        <td align="center">
+
+                            **partial**
+
+                        </td>
+                        <td width="10">&nbsp;</td>
+                    </tr>
+                </table>
+                <table cellpadding="0" cellspacing="0" width="100%" align="center" bgcolor="#ffffff">
+                    <tr>
+                        <td align="center">
+                            <table cellpadding="0" cellspacing="0" border="0" width="646" align="center">
+                                <tr>
+                                    <td height="0" style="font-size:0; line-height:0; padding-bottom:24px; border-bottom:1px solid #dddddd;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="font:11px/16px Arial; color:#999999; padding:  23px 0 0 10px;">
+                                        <p>
+                                            @General.automatedMsg
+                                            <a href="@links.support" style="color:#999999; font:11px/15px Arial; text-decoration: underline;">@General.customerSupport</a>.
+                                        </p>
+                                        <p>
+                                            <strong>Soda&nbsp;PDF</strong> @General.trademarkOf <strong>LULU Software Limited.</strong>
+                                            &copy; @DateTime.UtcNow.Year<strong> LULU Software Limited</strong>. @General.allRightsReserved.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font:11px/16px Arial; color:#999999 !important; padding: 0 0 0 10px;">
+                                        <a href="@links.privacy" style="color:#999999 !important;">
+                                            <span style="color:#999999 !important;">@General.privacyPolicy</span>
+                                        </a>
+                                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <a href="@links.terms" style="color:#999999 !important;"><span style="color:#999999 !important;">@General.termsOfUse</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="0" style="font-size:0; line-height:0; padding-bottom:24px; border-bottom:1px solid #dddddd;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="font:11px/24px Arial; color:#999999; padding-top: 7px;">7075 Robert-Joncas Place, Suite 142, St-Laurent, QC, H4M 2Z2, Canada</td>
+                                </tr>
+                                <tr><td height="0" style="font-size:0; line-height:0; padding-bottom:15px;">&nbsp;</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

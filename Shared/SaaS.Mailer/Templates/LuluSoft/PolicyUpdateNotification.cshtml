@@ -1,0 +1,40 @@
+﻿@model SaaS.Mailer.Models.Notification
+
+@using SaaS.Mailer;
+@using General = SaaS.Mailer.Templates.LuluSoft.App_GlobalResources.General
+@using local = SaaS.Mailer.Templates.LuluSoft.App_LocalResources.PolicyUpdateNotification.PolicyUpdateNotification
+
+<table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="626" align="center">
+    <tr>
+        <td align="left" style="font:16px/24px Arial; color:#2b2b2b; padding:45px 0 0;">
+            <p>
+                @General.Dear @Model.FullName,
+            </p>
+            <p>
+                @local.Prgh_1
+            </p>
+            <p>
+                @local.Prgh_2
+            </p>
+            <p>
+                <ul>
+                    <li>@local.list_1</li>
+                    <li>@local.list_2</li>
+                    <li>@local.list_3</li>
+                </ul>
+            </p>
+            <p>
+                @local.Prgh_3_sub1 <a href="http://privacy.truste.com/privacy-seal/LULU-software/validation?rid=e691fbfb-8de4-4b17-b576-70688b60730d" style="font:16px/24px Arial; color:#3a74e6; text-decoration: underline;">TRUSTe</a> @local.Prgh_3_sub2
+            </p>
+            <p>
+                @local.Prgh_4_sub1 <a href="@links.privacy" style="font:16px/24px Arial; color:#3a74e6; text-decoration: underline;">@General.legalAgreem</a> @local.Prgh_4_sub2
+            </p>
+            <p>
+                @General.regards
+            </p>
+            <p>
+                @General.yourTeam
+            </p>
+        </td>
+    </tr>
+</table>

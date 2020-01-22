@@ -1,0 +1,35 @@
+﻿@model SaaS.Mailer.Models.ProductSuspendNotification
+
+@using SaaS.Mailer;
+@using General = SaaS.Mailer.Templates.LuluSoft.App_GlobalResources.General
+@using Buttons = SaaS.Mailer.Templates.LuluSoft.App_GlobalResources.Buttons
+@using local = SaaS.Mailer.Templates.LuluSoft.App_LocalResources.ProductSuspendNotification.ProductSuspendNotification
+
+<table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="626" align="center">
+    <tr>
+        <td align="left" style="font:16px/24px Arial; color:#2b2b2b; padding:45px 0 0;">
+            <p>@General.Dear @Model.FullName,</p>
+            <p>
+                @local.Prgh_1 @Model.ProductName. @local.On @Model.ExpireDate @local.Prgh_2
+            </p>
+            <p>
+                 @local.Prgh_3
+            </p>
+            <p>
+                <a href="@links.account" 
+                   style="font:16px/24px Arial; color:#3a74e6; text-decoration: underline;">@Buttons.GotoMyAccount</a>
+            </p>
+            <p>
+                @local.Prgh_4
+                <a href="@links.knowledgeBaseModifyPlan" 
+                   style="font:16px/24px Arial; color:#3a74e6; text-decoration: underline;">@Buttons.ModifyYourPlan</a>
+            </p>
+            <p>
+                @General.regards
+            </p>
+            <p>
+                @General.yourTeam
+            </p>
+        </td>
+    </tr>
+</table>

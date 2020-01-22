@@ -1,0 +1,32 @@
+﻿@Html.PageHeader("Roles")
+<div class="row" data-ng-controller="adminRolesController">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix"></div>
+            <div class="panel-body">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th data-ng-repeat="group in ::model.groups" data-ng-bind="::group.title"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="role in ::model.roles">
+                            <td  class="col-sm-7">                                
+                                <p>
+                                    <span data-ng-bind="$index+1"></span>.
+                                    <span data-ng-bind="::role.title"></span>
+                                </p>
+                                <small data-ng-bind="::role.description" class="text-muted"></small>
+                            </td>
+                            <td data-ng-repeat="group in ::model.groups"  class="col-sm-1">
+                                <i class="fa fa-check fa-fw" data-ng-if="::isStatus(group, role)"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

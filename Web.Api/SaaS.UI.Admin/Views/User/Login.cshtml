@@ -1,0 +1,18 @@
+﻿@{ Layout = "~/Views/Shared/_LayoutEmpty.cshtml"; }
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Please Sign In</h3>
+            </div>
+            <div class="panel-body" data-ng-controller="signInController" data-ng-cloak>
+                <form name="form" data-ng-init="form=form" data-ng-submit="submit(form)" data-ng-loading-form data-ng-autocomplete>
+                    @FormField.Login()
+                    @FormField.Password()
+
+                    <button type="submit" class="btn btn-lg btn-success btn-block" value="Login"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

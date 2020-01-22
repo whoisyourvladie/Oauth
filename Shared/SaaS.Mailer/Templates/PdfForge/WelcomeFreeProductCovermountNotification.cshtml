@@ -1,0 +1,22 @@
+﻿@model SaaS.Mailer.Models.WelcomeFreeProductNotification
+
+@using SaaS.Mailer;
+@using General = SaaS.Mailer.Templates.PdfForge.App_GlobalResources.General
+@using local = SaaS.Mailer.Templates.PdfForge.App_LocalResources.WelcomeFreeProductCovermountNotification.WelcomeFreeProductCovermountNotification
+
+<table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="626" align="center">
+    <tr>
+        <td align="center">
+            <p>@General.Dear @Model.FullName,</p>
+            <p>
+                @Html.Raw(local.Prgh_1)
+            </p>
+            <p>
+                @string.Format(local.Prgh_2, @Model.ProductName)
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="padding-bottom: 40px;">@General.yourTeam</td>
+    </tr>
+</table>

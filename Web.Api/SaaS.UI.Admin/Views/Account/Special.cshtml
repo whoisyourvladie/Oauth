@@ -1,0 +1,76 @@
+﻿@Html.PageHeader("Special")
+@Html.Partial("~/Views/Account/Partial/Account.cshtml")
+
+@section scripts { @Html.Special() }
+<div class="row">
+    <div class="col-lg-6">
+        <div data-ng-controller="accountSpecialController" data-ng-show="model.account && !model.account.isDeleted" data-ng-cloak>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row ">
+                        <div class="form-group col-sm-6">
+                            <label>Product</label>
+                            <select class="form-control input-sm" data-ng-model="model.product" data-ng-change="productChange()"
+                                    data-ng-options="product.name for product in model.products"></select>
+                        </div>
+                        <div class="form-group col-sm-3" data-ng-show="isShowDiscount()">
+                            <label>Discount</label>
+                            <select class="form-control input-sm" data-ng-model="model.discount"
+                                    data-ng-options="discount.name for discount in model.product.discounts"></select>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col-sm-3">
+                            <label>Wid</label>
+                            <input class="form-control input-sm" type="text" data-ng-model="::model.tracking.wid" readonly>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label>Uid</label>
+                            @if (User.IsInRole("agent"))
+                            {
+                                <input class="form-control input-sm" type="text" data-ng-model="model.tracking.uid" readonly>
+                            }
+                            else
+                            {
+                                <input class="form-control input-sm" type="text" data-ng-model="model.tracking.uid" maxlength="7">
+                            }
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label>Ga</label>
+                            <input class="form-control input-sm" type="text" data-ng-model="::model.tracking.ga" readonly>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label>Gtm</label>
+                            <input class="form-control input-sm" type="text" data-ng-model="::model.tracking.gtm" readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-3">
+                            <label>Ref</label>
+                            <input class="form-control input-sm" type="text" data-ng-model="::model.tracking.ref" readonly>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label>Cmp</label>
+                            <input class="form-control input-sm" type="text" data-ng-model="::model.tracking.cmp" readonly>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label>Key1</label>
+                            <input class="form-control input-sm" type="text" data-ng-model="::model.tracking.key1" readonly>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label>Mkey1</label>
+                            <input class="form-control input-sm" type="text" data-ng-model="::model.tracking.mkey1" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="form-group col-sm-12">
+                            <textarea class="form-control" rows="5" data-ng-model="model.link" onClick="this.select()" style="resize:none" readonly></textarea>
+                        </div>
+                    </div>
+                    <a href="{{model.link}}" target="_blank" class="btn btn-primary btn-sm">Open in new tab</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+﻿@Html.PageHeader("Add/Edit user")
+<div data-ng-controller="adminUsersController" data-ng-cloak>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="panel panel-default" data-ng-if="view==viewEnum.none">
+                <div class="panel-heading clearfix">
+                    <button type="button" class="btn btn-primary btn-sm" data-ng-click="addUser()">
+                        Add
+                    </button>
+                    @Button.Refresh()
+                </div>
+                <div class="panel-body">
+                    <div class="row ">
+                        <div class="form-group col-sm-4">
+                            <label>Login</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control input-sm" placeholder="Login..." data-ng-model="filter">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary btn-sm" data-ng-click="filter=''" data-ng-disabled="!filter">Clear</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover" data-ng-show="model.users">
+                        <thead>
+                            <tr>
+                                <th>Login</th>
+                                <th>Role</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="user in filterUsers = (model.users
+                                | filter : {login: filter})
+                                | limitTo:model.pagination.limitFrom():model.pagination.limitTo()">
+                                <td class="col-sm-6">
+                                    <span data-ng-bind="$index+1"></span>.
+                                    <span data-ng-bind="::user.login"></span>
+                                    <span class="label label-danger" data-ng-hide="user.isActive">
+                                        <i class='fa fa-exclamation'></i> User is deactivated
+                                    </span>
+                                </td>
+                                <td class="col-sm-2">
+                                    <span ng-role="user.role"></span>
+                                </td>
+                                <td class="col-sm-4">
+                                    <button type="button" class="btn btn-primary btn-xs btn-space"
+                                            data-ng-click="editUser(user)">
+                                        <i class='fa fa-pencil'></i> Edit
+                                    </button>
+
+                                    <button type="button" class="btn btn-primary btn-xs btn-space"
+                                            data-ng-click="activateUser(user)" data-ng-hide="user.isActive">
+                                        <i class='fa fa-thumbs-o-up'></i> Activate
+                                    </button>
+
+                                    <button type="button" class="btn btn-primary btn-xs btn-space"
+                                            data-ng-click="deactivateUser(user)" data-ng-show="user.isActive">
+                                        <i class='fa fa-thumbs-o-down'></i> Deactivate
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">
+                                    Total: <span data-ng-bind="filterUsers.length"></span>
+                                    <ul class="pull-right pagination-sm" style="margin:0px;"
+                                        uib-pagination
+                                        total-items="filterUsers.length"
+                                        data-ng-model="model.pagination.currentPage"
+                                        items-per-page="model.pagination.count"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-default" data-ng-if="view==viewEnum.addUser || view==viewEnum.editUser">
+                <div class="panel-heading clearfix">
+                    <span data-ng-if="view==viewEnum.addUser">Add new user </span>
+                    <span data-ng-if="view==viewEnum.editUser">Edit user </span>
+                </div>
+                <div class="panel-body">
+                    <form name="form" data-ng-init="form=form" data-ng-submit="submit(form)" data-ng-loading-form>
+                        @FormField.Login()
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input class="form-control" type="password" data-ng-model="model.password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                            <select class="form-control" data-ng-model="model.role" ng-options="role for role in ::model.roles track by role"></select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-sm" value="Save"></button>
+                        <button type="button" class="btn btn-default btn-sm btn-space" data-ng-click="cancel()">Cancel</button>
+                    </form>
+                </div>
+                @*<div class="panel-heading">
+                        <button type="button" class="btn btn-primary btn-sm btn-space" data-ng-click="ok()">Ok</button>
+                        <button type="button" class="btn btn-default btn-sm btn-space" data-ng-click="model.user=null; refresh()">Cancel</button>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+</div>

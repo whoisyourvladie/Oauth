@@ -1,0 +1,228 @@
+﻿@model SaaS.Mailer.Models.Notification
+
+@using SaaS.Mailer;
+@using General = SaaS.Mailer.Templates.PdfForge.App_GlobalResources.General
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Architect</title>
+    <style type="text/css">
+        #outlook a {
+            padding: 0;
+        }
+
+        html {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden;
+        }
+
+        img {
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        a img {
+            border: none;
+        }
+
+        p {
+            margin: 0 0 1em 0;
+        }
+
+            p strong {
+                color: #db2325;
+                font-weight: bold;
+            }
+
+            p a {
+                color: #3c3b3b;
+                text-decoration: underline;
+            }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+            table td {
+                border-collapse: collapse;
+                font-size: 16px;
+                font-family: Arial, sans-serif;
+                line-height: 24px;
+                color: #2b2b2b;
+            }
+
+
+            table.emailButton a {
+                text-transform: uppercase !important;
+                font-size: 20px !important;
+                line-height: 54px !important;
+                font-family: Arial, sans-serif !important;
+                font-weight: bold !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+            }
+    </style>
+
+</head>
+<body style="padding:0; margin:0 auto; background-color:#ffffff; font:15px/22px Arial, Helvetica, sans-serif; overflow-x: hidden;">
+    <table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="100%" align="center">
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" bgcolor="#f7f7f7" border="0" width="100%" align="center">
+                    <tr>
+                        <td align="center">
+                            <table cellpadding="0" cellspacing="0" bgcolor="#f7f7f7" border="0" width="626" align="center">
+                                <tr>
+                                    <td height="31" valign="middle" width="300" style="font:bold 11px Arial; line-height: 11px; color:#9c9c9c">**subject**</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table cellpadding="0" cellspacing="0" width="100%" align="center">
+                    <tr>
+                        <td align="center" style="padding-top: 18px; padding-bottom: 18px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="626" align="center">
+                                <tr>
+                                    <td width="145" height="45"><img src="http://go.pdfarchitect.org/Mailer/2017/E-Sign/images/logo.jpg" style="display:block; border:none" width="250" height="38" alt="PDF Architect" /></td>
+                                    <!-- <td width="494">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center" style="font:15px/18px Arial, sans-serif;">
+                                        <tr>
+                                            <td align="right" width="326" style="font:11px arial; color:#9c9c9c">Can't view this e-mail? Try the <a href="#" style="color:#9c9c9c;">Web version</a>.</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" style="padding:10px 0 0 0;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="236" align="right">
+                                                    <tr>
+                                                        <td><a href="#"><img src="http://go.pdfarchitect.org/Mailer/2017/E-Sign/images/lang/en.jpg" style="display:block; border:none" width="34" height="10" alt="EN" /></a></td>
+                                                        <td width="14">&nbsp;</td>
+                                                        <td><a href="#"><img src="http://go.pdfarchitect.org/Mailer/2017/E-Sign/images/lang/fr.jpg" style="display:block; border:none" width="35" height="10" alt="FR" /></a></td>
+                                                        <td width="14">&nbsp;</td>
+                                                        <td><a href="#"><img src="http://go.pdfarchitect.org/Mailer/2017/E-Sign/images/lang/de.jpg" style="display:block; border:none" width="35" height="10" alt="DE" /></a></td>
+                                                        <td width="14">&nbsp;</td>
+                                                        <td><a href="#"><img src="http://go.pdfarchitect.org/Mailer/2017/E-Sign/images/lang/it.jpg" style="display:block; border:none" width="31" height="10" alt="IT" /></a></td>
+                                                        <td width="14">&nbsp;</td>
+                                                        <td><a href="#"><img src="http://go.pdfarchitect.org/Mailer/2017/E-Sign/images/lang/es.jpg" style="display:block; border:none" width="33" height="10" alt="ES" /></a></td>
+                                                        <td width="7">&nbsp;</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                     </td> -->
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table cellpadding="0" cellspacing="0" border="0" height="37" width="100%" valign="top" align="center">
+                    <tr>
+                        <td background="http://go.pdfarchitect.org/Mailer/2017/E-Sign/images/pdf-arch-bg.png" bgcolor="#ffffff" valign="top">
+                            <!--[if gte mso 9]>
+                            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:980;height:37px;">
+                              <v:fill type="tile" src="http://go.pdfarchitect.org/Mailer/2017/E-Sign/images/pdf-arch-bg.png" color="#ffffff" />
+                              <v:textbox inset="0,0,0,0">
+                            <![endif]-->
+                            <div>
+                                <table cellpadding="0" cellspacing="0" border="0" width="626" valign="middle" align="center" height="37">
+                                    <tr>
+                                        <td valign="middle" align="center">
+                                            <table cellpadding="0" cellspacing="0" border="0" align="center" valign="middle" bgcolor="#f5f5f5" height="37">
+                                                <tr>
+                                                    <td align="center" valign="middle" style="padding-left: 10px; padding-right: 10px; text-align: center; line-height: 16px;" height="37">
+
+                                                        <span style="font:16px Arial; line-height: 16px; color:#000000;">@Model["email"]</span>
+                                                        <span style="font:16px Arial; line-height: 22px; color:#a9a9a9; display: inline-block;">&nbsp;&#124;&nbsp;</span>
+                                                        <a href="@links.account" style="font:16px Arial; line-height: 16px; color:#3982d4; text-decoration: none;">@General.myAccount</a>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if gte mso 9]>
+                              </v:textbox>
+                            </v:rect>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                </table>
+
+                <table cellpadding="0" cellspacing="0" width="100%" align="center">
+                    <tr>
+                        <td align="center" style="padding-top: 40px; padding-bottom: 40px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="626" align="center">
+                                <tr>
+                                    <td valign="top" align="center" height="85">
+                                        <img src="http://go.pdfarchitect.org/Mailer/2017/E-Sign/images/pdf-arch.png" width="74" height="85" alt="PDF Architect" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table cellpadding="0" cellspacing="0" width="100%" align="center">
+                    <tr>
+                        <td align="center">
+
+                            **partial**
+
+                        </td>
+                    </tr>
+                </table>
+
+                <table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="100%" align="center">
+                    <tr>
+                        <td align="center">
+                            <table cellpadding="0" cellspacing="0" width="626" align="center">
+                                <tr>
+                                    <td style="font:10px Arial; padding:15px 0 13px;color:#9c9c9c;border-top:1px solid #d9d9d9;">
+                                        <p>
+                                            @General.automatedMsg <a href="@links.support" style="color: #9c9c9c;" target="_self">@General.customerSupport</a>.
+                                        </p>
+                                        <p>&copy; 2018 PDF Architect. @General.allRightsReserved.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top:1px solid #d9d9d9;padding:13px 0 0 0;">
+                                        <table cellpadding="0" cellspacing="0" width="100%" align="center">
+                                            <tr>
+                                                <td style="font:10px Arial; color:#9c9c9c; line-height:30px">pdfforge GmbH Gro&szlig;e Bergstra&szlig;e 219 22767 Hamburg</td>
+                                                <td align="right" style="font:10px Arial;" height="20"><a href="@links.privacy" style="color:#9c9c9c;">@General.privacyPolicy</a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="15"><img src="http://pixel.monitor1.returnpath.net/pixel.gif?r=a4cc87db2e07163119f9330c2a5f6181d6c291f1&s=abc1234&c=12345&gender=male" width="1" height="1" /></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

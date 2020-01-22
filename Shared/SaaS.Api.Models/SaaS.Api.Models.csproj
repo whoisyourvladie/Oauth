@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E14BF87F-6BCE-4925-BCCB-7958B90E7989}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaaS.Api.Models</RootNamespace>
+    <AssemblyName>SaaS.Api.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Nps\NpsViewModel.cs" />
+    <Compile Include="Oauth\MergeViewModel.cs" />
+    <Compile Include="Oauth\EmailChangePendingViewModel.cs" />
+    <Compile Include="Oauth\AccountDetailViewModel.cs" />
+    <Compile Include="Oauth\AuthViewModel.cs" />
+    <Compile Include="Oauth\ChangePasswordViewModel.cs" />
+    <Compile Include="Oauth\ConfirmEmalViewModel.cs" />
+    <Compile Include="Oauth\ExternalLoginSettingsViewModel.cs" />
+    <Compile Include="Oauth\ParamsViewModel.cs" />
+    <Compile Include="Oauth\RegisterAnonymousViewModel.cs" />
+    <Compile Include="Oauth\RegisterViewModel.cs" />
+    <Compile Include="Oauth\ResetPasswordViewModel.cs" />
+    <Compile Include="Oauth\SignInViewModel.cs" />
+    <Compile Include="Oauth\UserInfoViewModel.cs" />
+    <Compile Include="Products\AccountProductModuleModel.cs" />
+    <Compile Include="Products\AccountProductViewModel.cs" />
+    <Compile Include="Products\AddOwnerProductViewModel.cs" />
+    <Compile Include="Products\OwnerProductViewModel.cs" />
+    <Compile Include="Products\ProductComparer.cs" />
+    <Compile Include="Products\ProductConvertor.cs" />
+    <Compile Include="Products\ProductViewModel.cs" />
+    <Compile Include="Products\UpgradeProductViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\PasswordRegexAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaaS.Data.Entities\SaaS.Data.Entities.csproj">
+      <Project>{E4C589CC-B762-4EF5-A951-F8455314204E}</Project>
+      <Name>SaaS.Data.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaaS.Identity\SaaS.Identity.csproj">
+      <Project>{B92AD5A5-EF14-43AD-90CC-ECEA8F2013BD}</Project>
+      <Name>SaaS.Identity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

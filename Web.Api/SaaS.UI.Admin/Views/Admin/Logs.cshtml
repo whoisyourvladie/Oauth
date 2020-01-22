@@ -1,0 +1,92 @@
+﻿@Html.PageHeader("Logs")
+<div class="row" data-ng-controller="adminLogsController">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <div class="pull-right">
+                <a class="btn btn-primary btn-sm" data-ng-click="csv()">
+                    <i class="fas fa-download"></i>
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row ">
+                <form name="form" data-ng-init="form=form" data-ng-submit="submit(form)" data-ng-loading-form data-ng-autocomplete>
+                    <div class="form-group col-sm-2">
+                        <label>User</label>
+                        <select class="form-control input-sm" data-ng-model="model.search.user" ng-options="user.login for user in model.users track by user.id"></select>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <label>Action</label>
+                        <select class="form-control input-sm" data-ng-model="model.search.logActionType" ng-options="logActionType.name for logActionType in model.logActionTypes track by logActionType.id"></select>
+                    </div>
+
+                    <div class="form-group col-sm-2">
+                        <label>From</label>
+                        <div class="input-group date">
+                            <input type="text" class="form-control input-sm" readonly="readonly"
+                                   uib-datepicker-popup="{{::'dd-MMMM-yyyy'}}"
+                                   data-ng-model="model.search.from" is-open="isFromOpened"
+                                   data-ng-click="isFromOpened=true" />
+
+                            <span class="input-group-addon" data-ng-click="isFromOpened=true">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <label>To</label>
+                        <div class="input-group date">
+                            <input type="text" class="form-control input-sm" readonly="readonly"
+                                   uib-datepicker-popup="{{::'dd-MMMM-yyyy'}}"
+                                   data-ng-model="model.search.to" is-open="isToOpened"
+                                   data-ng-click="isToOpened=true" />
+
+                            <span class="input-group-addon" data-ng-click="isToOpened=true">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label>Log</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control input-sm" placeholder="Log..." data-ng-model="model.search.log">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary btn-sm" value="Search"></button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Log</th>
+                            <th>Account Id</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="log in model.logs">
+                            <td class="col-sm-1">
+                                <span data-ng-bind="::log.login"></span>
+                                <span data-ng-role="log.role"></span>
+                            </td>
+                            <td class="col-sm-7" data-ng-bind="::log.log"></td>
+                            <td class="col-sm-3" data-ng-bind="::log.accountId"></td>
+                            <td class="col-sm-1" data-ng-date="::log.createDate"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" data-ng-hide="!model.logs || model.logs.length">
+                                Oops, no records found!
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

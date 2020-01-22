@@ -1,0 +1,40 @@
+<h6 class="account-title">Previous emails</h6>
+<ng-account-menu></ng-account-menu>
+
+<div class="table-responsive-sm" data-ng-init="refresh()">
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Date</th>
+                <th class="text-center" style="width: 10%">
+                    <button class="btn btn-sm pt-0 pb-0" data-ng-click="refresh()">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="subEmail in model.subEmails">
+                <td>
+                    <span data-ng-bind="::subEmail.email"></span>
+                </td>
+                <td>
+                    <span data-ng-date="::subEmail.createDate"></span>
+                </td>
+                <td class="text-center">
+                    <button class="btn btn-sm pt-0 pb-0" data-ng-click="remove(subEmail)">
+                        <i class="fas fa-user-minus text-danger"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" data-ng-hide="!model.subEmails || model.subEmails.length">
+                    Oops, no records found!
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

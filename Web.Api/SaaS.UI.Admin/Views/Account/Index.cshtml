@@ -1,0 +1,48 @@
+﻿@Html.PageHeader("Info")
+@Html.Partial("~/Views/Account/Partial/Account.cshtml")
+
+<div class="row" data-ng-controller="accountInfoController" data-ng-show="model.account && !model.account.isDeleted" data-ng-cloak>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Account
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label>Customer type</label>
+                        <span ng-account-type="model.account.status"></span>
+                        <button type="button" class="btn btn-primary btn-xs btn-mark-as-business" data-ng-hide="isBusiness()" data-ng-click="activate('b2b')">Mark as business</button>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label>Active customer</label>
+                        <span ng-account-activated="model.account.status"></span>
+                        <button type="button" class="btn btn-primary btn-xs" data-ng-hide="isActivated()" data-ng-click="activate('b2c')">Activate</button>
+                    </div>
+                </div>
+                <form name="form" data-ng-init="form=form" data-ng-submit="submit(form)" data-ng-loading-form data-ng-autocomplete>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            @AccountFormField.FirstName()
+                        </div>
+                        <div class="col-sm-4">
+                            @AccountFormField.LastName()
+                        </div>
+                        <div class="col-sm-4">
+                            @AccountFormField.Email()
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-4">
+                            <button type="submit" class="btn btn-primary btn-sm" value="Update"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        @Html.Partial("~/Views/Account/Partial/SubEmails.cshtml")
+    </div>
+    <div class="col-lg-6">
+        @Html.Partial("~/Views/Account/Partial/ConnectedAccounts.cshtml")
+    </div>
+</div>

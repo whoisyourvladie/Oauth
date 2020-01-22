@@ -1,0 +1,378 @@
+﻿{
+  "latestVersion": "11.9.99.99999",
+  "modules": [
+    {
+      "name": "view",
+      "features": [
+        { "name": "View.DocumentViewRotate" },
+        { "name": "View.Layout.DocumentLayoutSingle" },
+        { "name": "View.Layout.DocumentLayoutContinuous" },
+        { "name": "View.Layout.DocumentLayoutFacing" },
+        { "name": "View.Layout.DocumentLayoutFacingContinuous" },
+        { "name": "View.Layout.DocumentLayout3DView" },
+        { "name": "View.Layout.FullScreenMode" },
+        { "name": "View.FitPage" },
+        { "name": "View.FitWidth" },
+        { "name": "View.ActualSize" },
+        { "name": "View.SideBySideView.OpenDocuments" },
+        { "name": "View.SideBySideView.SynchronousScrolling" },
+        { "name": "View.SideBySideView.ChangeDocuments" },
+        {
+          "name": "View.Page.Snapshot",
+          "version": "10.1"
+        },
+        { "name": "View.Product.Options" },
+        { "name": "View.Product.Report" },
+        { "name": "View.Product.Updates" },
+        { "name": "View.Product.AboutPlugins" },
+        { "name": "View.Product.About" },
+        { "name": "View.Activate.Activate" },
+        { "name": "View.Activate.LicenseInformation" },
+        { "name": "View.Help.Support" },
+        { "name": "View.Help.UserGuide" },
+        { "name": "View.Help.GettingStarted" },
+        { "name": "View.Snapshot" },
+        { "name": "View.SendByEmail" },
+        { "name": "View.GoToPrevPage" },
+        { "name": "View.GoToNextPage" },
+        { "name": "View.GotoPage" },
+        { "name": "View.IncreaseDocumentViewZoom" },
+        { "name": "View.DecreaseDocumentViewZoom" },
+        { "name": "View.Search" },
+        { "name": "Print" },
+        { "name": "Print.Print" },
+        { "name": "Evernote" },
+        { "name": "Evernote.Send" },
+        { "name": "Forms.HighlightFormField" },
+        { "name": "Forms.Import" },
+        { "name": "Forms.Export" },
+        { "name": "Forms.Reset" },
+        { "name": "eSignLive.Help" },
+        { "name": "eSignLive.Discover" },
+        { "name": "SignNow.Help" },
+        { "name": "SignNow.Discover" },
+        { "name": "eSign2.Help" },
+        { "name": "eSign2.Discover" },
+        { "name": "UM" },
+        { "name": "UM.SendToOnline" },
+        {
+          "name": "Batch.Print",
+          "version": "10.1"
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "features": [
+        { "name": "Create" },
+        { "name": "Create.NewFile" },
+        {
+          "name": "Create.PDFFromURL",
+          "version": "10.0"
+        },
+        { "name": "Create.PDFFromAnyFile" },
+        { "name": "Create.PDFFromClipboard" },
+        { "name": "Create.CombineFiles" },
+        { "name": "Create.BatchConvert" },
+        { "name": "Create.BatchImport" },
+        { "name": "Create.PDFFromScanner" },
+        { "name": "Create.Batch" },
+        {
+          "name": "Batch.Create",
+          "version": "10.1"
+        }
+      ]
+    },
+    {
+      "name": "free convert",
+      "features": [
+        { "name": "Convert.PdfToWord" },
+        { "name": "Convert.PdfToPowerPoint" },
+        { "name": "Convert.PdfToExcel" },
+        { "name": "Convert.PdfToImage" }
+      ]
+    },
+    {
+      "name": "convert",
+      "features": [
+        { "name": "Convert" },
+        { "name": "Convert.PdfToHtml" },
+        { "name": "Convert.PdfToTxt" },
+        { "name": "Convert.PdfToRTF" },
+        { "name": "Convert.PDFToPDFA" },
+        { "name": "Convert.Batch" },
+        {
+          "name": "Batch.Convert",
+          "version": "10.1"
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "features": [
+        { "name": "Edit" },
+        { "name": "Edit.Pages.MovePages" },
+        { "name": "Edit.Pages.DeletePages" },
+        { "name": "Edit.Pages.ReplacePages" },
+        { "name": "Edit.Pages.ExtractPages" },
+        { "name": "Edit.Pages.SplitPages" },
+        { "name": "Edit.Pages.RotatePages" },
+        { "name": "Edit.Pages.Background" },
+        { "name": "Edit.Pages.ExtractImages" },
+        { "name": "Edit.Pages.PageSize" },
+        { "name": "Edit.Pages.PageMargin" },
+        {
+          "name": "Edit.Pages.Crop",
+          "version": "10.1"
+        },
+        { "name": "Edit.Text.TypeText" },
+        {
+          "name": "Edit.Text.Replace",
+          "version": "9.2.0.0"
+        },
+        { "name": "Edit.Optimize.ReduceFileSize" },
+        { "name": "Edit.CutClipboard" },
+        { "name": "Edit.CopyClipboard" },
+        { "name": "Edit.PasteClipboard" },
+        { "name": "Edit.FontBold" },
+        { "name": "Edit.FontItalic" },
+        { "name": "Edit.FontColor" },
+        { "name": "Edit.FontSize" },
+        { "name": "Edit.FontFamily" },
+        { "name": "Edit.Attachments.Add" },
+        { "name": "Edit.Attachments.Delete" },
+        { "name": "Edit.Attachments.EditDescription" },
+        { "name": "Edit.Bookmarks.Add" },
+        { "name": "Edit.Bookmarks.Delete" },
+        { "name": "Edit.Bookmarks.Rename" },
+        { "name": "Edit.Tools.Ruler" },
+        { "name": "Edit.Tools.Grid" },
+        {
+          "name": "Edit.SpellCheck",
+          "version": "10.1"
+        },
+        {
+          "name": "Batch.Crop.Add",
+          "version": "10.1"
+        },
+        {
+          "name": "Batch.Crop.Remove",
+          "version": "10.1"
+        }
+      ]
+    },
+    {
+      "name": "insert",
+      "features": [
+        { "name": "Insert" },
+        { "name": "Insert.Pages.InsertPages" },
+        { "name": "Insert.Pages.PagesNumbers" },
+        { "name": "Insert.Pages.InsertPagesNumbers" },
+        { "name": "Insert.Pages.RemovePagesNumbers" },
+        { "name": "Insert.Image.InsertImage" },
+        { "name": "Insert.Image.Crop" },
+        { "name": "Insert.Image.EditClip" },
+        { "name": "Insert.Links.InsertLinks" },
+        { "name": "Insert.Bookmarks.ChangeAction" },
+        { "name": "HeaderFooter" },
+        { "name": "HeaderFooter.Add" },
+        { "name": "HeaderFooter.Remove" },
+        { "name": "HeaderFooter.BatesNumbering" },
+        { "name": "HeaderFooter.BatesNumbering.Options" },
+        { "name": "HeaderFooter.BatesNumbering.Add" },
+        { "name": "HeaderFooter.BatesNumbering.Remove" },
+        { "name": "Watermark" },
+        { "name": "Watermark.AddWatermark" },
+        { "name": "Watermark.RemoveWatermark" },
+        {
+          "name": "Batch.HeaderFooter.Add",
+          "version": "10.1"
+        },
+        {
+          "name": "Batch.HeaderFooter.Remove",
+          "version": "10.1"
+        },
+        {
+          "name": "Batch.Watermark.Add",
+          "version": "10.1"
+        },
+        {
+          "name": "Batch.Watermark.Remove",
+          "version": "10.1"
+        },
+        {
+          "name": "Batch.BatesNumbering.Add",
+          "version": "10.1"
+        },
+        {
+          "name": "Batch.BatesNumbering.Remove",
+          "version": "10.1"
+        }
+      ]
+    },
+    {
+      "name": "review",
+      "features": [
+        { "name": "Review" },
+        { "name": "Review.Stamps" },
+        { "name": "Review.Stamps.InsertBusinesStamp" },
+        { "name": "Review.Stamps.InsertCustomStamp" },
+        { "name": "Review.Stamps.InsertDynamicStamp" },
+        { "name": "Review.Stamps.CreateStamp" },
+        { "name": "Review.Shapes" },
+        { "name": "Review.Shapes.InsertShape" },
+        { "name": "Review.HideComments" },
+        { "name": "Review.AddStickerNote" },
+        { "name": "Review.Pencil" },
+        { "name": "Review.Attachments" },
+        { "name": "Review.Whiteout" },
+        { "name": "Review.Highlight" },
+        { "name": "Review.Underline" },
+        { "name": "Review.Strikethrough" },
+        { "name": "Compare" },
+        { "name": "Compare.CompareDocuments" },
+
+        {
+          "name": "Measurements",
+          "version": "9.1.0.0"
+        },
+        {
+          "name": "Review.Measurements",
+          "version": "9.1.0.0"
+        },
+        {
+          "name": "Review.Distance",
+          "version": "9.1.0.0"
+        },
+        {
+          "name": "Review.Perimeter",
+          "version": "9.1.0.0"
+        },
+        {
+          "name": "Review.Area",
+          "version": "9.1.0.0"
+        },
+        {
+          "name": "Review.Calibration",
+          "version": "9.1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "secure",
+      "features": [
+        { "name": "Secure" },
+        {
+          "name": "Secure.Batch.Password",
+          "version": "10.1"
+        },
+        {
+          "name": "Secure.Batch.Permissions",
+          "version": "10.1"
+        },
+        { "name": "Secure.Password" },
+        { "name": "Secure.Permissions" },
+        { "name": "Secure.Sign.Sign" },
+        { "name": "Secure.Sign.Appearance" },
+        { "name": "Secure.Sign.Certificate" },
+        { "name": "Secure.Sign.BuySignatures" },
+        { "name": "Secure.Sign.Help" },
+        { "name": "Secure.Sign.Discover" },
+        { "name": "Secure.Redaction" },
+        {
+          "name": "Secure.Redaction.Search",
+          "version": "9.2.0.0"
+        },
+        { "name": "Secure.Redaction.Options" }
+      ]
+    },
+    {
+      "name": "forms",
+      "features": [
+        { "name": "Forms" },
+        { "name": "Forms.TextFieldCreate" },
+        { "name": "Forms.CheckBoxCreate" },
+        { "name": "Forms.RadioGroupCreate" },
+        { "name": "Forms.ComboBoxCreate" },
+        { "name": "Forms.ListBoxCreate" },
+        { "name": "Forms.PushButtonCreate" },
+        { "name": "Forms.SubmitButtonCreate" },
+        { "name": "Forms.EmailButtonCreate" },
+        { "name": "Forms.PrintButtonCreate" },
+        { "name": "Form.SetTabOrder" },
+        { "name": "Form.SetCalculationOrder" },
+        {
+          "name": "Forms.DigitalSignatureFieldCreate",
+          "version": "10.0"
+        }
+      ]
+    },
+    {
+      "name": "ocr",
+      "features": [
+        { "name": "IDRS.OCR" },
+        { "name": "IDRS.OCR.Auto" },
+        { "name": "IDRS.OCR.Manual" },
+        { "name": "IDRS.OCR.PageRange" },
+        { "name": "IDRS.OCR.AllDocument" },
+        { "name": "IDRS.OCR.Batch" },
+        { "name": "IDRS.OCR.FromExternalImage" },
+        { "name": "IDRS.OCR.Options" }
+      ]
+    },
+    {
+      "name": "ocr-tess",
+      "features": [
+        {
+          "name": "TESS.OCR",
+          "version": "9.3.0.0"
+        },
+        { "name": "TESS.OCR.Auto" },
+        { "name": "TESS.OCR.Manual" },
+        { "name": "TESS.OCR.PageRange" },
+        { "name": "TESS.OCR.AllDocument" },
+        { "name": "TESS.OCR.Batch" },
+        { "name": "TESS.OCR.FromExternalImage" },
+        {
+          "name": "TESS.OCR.Options",
+          "version": "9.3.0.0"
+        }
+      ]
+    },
+    {
+      "name": "e-sign",
+      "features": [
+        { "name": "eSignLive" },
+        { "name": "eSignLive.Inbox" },
+        { "name": "eSignLive.Drafts" },
+        { "name": "eSignLive.Templates" },
+        { "name": "eSignLive.QuickSend" },
+        { "name": "eSignLive.AdvancedSend" },
+        { "name": "eSignLive.ManageSigners" },
+        { "name": "eSignLive.ViewInbox" },
+        { "name": "eSignLive.ViewDrafts" },
+        { "name": "eSignLive.ViewTemplates" },
+        { "name": "eSignLive.ViewDraftsMenu" },
+        { "name": "eSignLive.ViewTemplatesMenu" },
+        { "name": "eSignLive.ApplyLayout" },
+        { "name": "eSignLive.SaveLayout" },
+        { "name": "eSignLive.CreateTemplate" },
+        { "name": "eSign2" },
+        { "name": "eSign2.Inbox" },
+        { "name": "eSign2.Drafts" },
+        { "name": "eSign2.Templates" },
+        { "name": "eSign2.QuickSend" },
+        { "name": "eSign2.AdvancedSend" },
+        { "name": "eSign2.ManageSigners" },
+        { "name": "eSign2.ViewInbox" },
+        { "name": "eSign2.ViewDrafts" },
+        { "name": "eSign2.ViewTemplates" },
+        { "name": "eSign2.ViewDraftsMenu" },
+        { "name": "eSign2.ViewTemplatesMenu" },
+        { "name": "eSign2.ApplyLayout" },
+        { "name": "eSign2.SaveLayout" },
+        { "name": "eSign2.CreateTemplate" }
+      ]
+    }
+  ]
+}

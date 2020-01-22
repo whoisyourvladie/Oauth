@@ -1,0 +1,33 @@
+<h6 class="account-title">Connected accounts</h6>
+<ng-account-menu></ng-account-menu>
+
+<div class="table-responsive">
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th></th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="sessionToken in model.externalSessionTokens">
+                <td>
+                    <span data-ng-external-connected-account="{{::sessionToken.externalClientName}}"></span>
+                    <span data-ng-bind="::sessionToken.email"></span>
+                </td>
+                <td class="text-center">
+                    <span data-ng-external-connected-account-status="{{::sessionToken.isUnlinked}}"></span>
+                </td>
+                <td class="align-middle" data-ng-date="::sessionToken.createDate"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" data-ng-hide="!model.externalSessionTokens || model.externalSessionTokens.length">
+                    Oops, no records found!
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

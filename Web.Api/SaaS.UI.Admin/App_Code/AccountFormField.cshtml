@@ -1,0 +1,64 @@
+﻿@using SaaS.UI.Admin.App_Start;
+@using StructureMap;
+
+@helper FirstName()
+{
+IAppSettings appSettings = ObjectFactory.GetInstance<IAppSettings>();
+    <div data-ng-form-validation-group>
+        <label>First name *</label>
+        <input type="text" class="form-control input-sm"
+               name="firstName" placeholder="First name..." data-ng-model="model.account.firstName"
+               data-ng-model-options="{ updateOn: 'blur' }" maxlength="40" ng-pattern="@appSettings.Validation.JsFirstNamePattern" required>
+        <span data-ng-required-error>Enter a first name</span>
+        <span data-ng-pattern-error>You need to enter a valid first name</span>
+    </div>
+}
+@helper LastName()
+{
+IAppSettings appSettings = ObjectFactory.GetInstance<IAppSettings>();
+    <div data-ng-form-validation-group>
+        <label>Last name *</label>
+        <input type="text" class="form-control input-sm"
+               name="lastName" placeholder="Last name..." data-ng-model="model.account.lastName"
+               data-ng-model-options="{ updateOn: 'blur' }" maxlength="40" ng-pattern="@appSettings.Validation.JsLastNamePattern" required>
+        <span data-ng-required-error>Enter a last name</span>
+        <span data-ng-pattern-error>You need to enter a valid last name</span>
+    </div>
+}
+@helper Email()
+{
+IAppSettings appSettings = ObjectFactory.GetInstance<IAppSettings>();
+    <div data-ng-form-validation-group>
+        <label>Email *</label>
+        <input type="email" class="form-control input-sm"
+               name="email" placeholder="Email..." data-ng-model="model.account.email"
+               data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" ng-pattern="@appSettings.Validation.JsEmailPattern" required>
+        <span data-ng-required-error>Enter an email</span>
+        <span data-ng-pattern-error>Enter a valid email</span>
+    </div>
+}
+
+@helper AssignEmail()
+{
+IAppSettings appSettings = ObjectFactory.GetInstance<IAppSettings>();
+    <div data-ng-form-validation-group>
+        <label>Email *</label>
+        <input type="email" class="form-control input-sm"
+               name="email" placeholder="Email..." data-ng-model="product.assignEmail"
+               data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" ng-pattern="@appSettings.Validation.JsEmailPattern" required>
+        <span data-ng-required-error>Enter an email</span>
+        <span data-ng-pattern-error>Enter a valid email</span>
+    </div>
+}
+
+@helper NewPassword()
+{
+    <div data-ng-form-validation-group>
+        <label>Password *</label>
+        <input type="password" name="password" placeholder="Password *" data-ng-model="model.account.password" data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" ng-password-pattern="model.account.password" required>
+        <span data-ng-required-error>Enter a new password</span>
+        <span data-ng-passwordPattern-error>Your password must be at least 6 characters, containing both letters and numbers</span>
+        <span data-ng-passwordSpecialCharacters-error>Your password cannot contain 3 or more sequential characters or have the same character repeated sequentially (eg. 123,ABC, AAA, 111)</span>
+        <span data-ng-passwordSpecialWords-error>Your password cannot contain "password", "admin" or "administrator"</span>
+    </div>
+}

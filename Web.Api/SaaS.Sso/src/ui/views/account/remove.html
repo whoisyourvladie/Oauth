@@ -1,0 +1,24 @@
+<div class="title">
+    <h3 translate="Remove an account"></h3>
+    <p translate="from this browser"></p>
+</div>
+<ul class="account-list">
+    <li data-ng-repeat="account in model.accounts" data-ng-click="remove(account)">
+
+        <label class="profile-icon" data-ng-bind="::getFirstChar(account)"
+            data-ng-style="{background:getColor(account)}"></label>
+        <span class="profile-info">
+            <label data-ng-bind="::account.firstName"></label>
+            <label data-ng-bind="::account.lastName"></label>
+
+            <small data-ng-bind="::account.email"></small>
+        </span>
+        <div class="float-right">
+            <span class="delete">-</span>
+        </div>
+
+    </li>
+    <li ui-sref="account/identifier" translate="Use another account"></li>
+</ul>
+
+<button class="btn btn-primary float-left" ui-sref="account/select" translate="Done"></button>

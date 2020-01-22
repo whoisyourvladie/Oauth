@@ -1,0 +1,1655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DC7DC14-0DC4-4708-927E-B930F656C5B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaaS.Mailer</RootNamespace>
+    <AssemblyName>SaaS.Mailer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LuluSoftDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\LuluSoftDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LuluSoft</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LuluSoftDevel|AnyCPU'">
+    <OutputPath>bin\LuluSoftDevel\</OutputPath>
+    <DefineConstants>TRACE;LuluSoft</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LuluSoftRelease|AnyCPU'">
+    <OutputPath>bin\LuluSoftRelease\</OutputPath>
+    <DefineConstants>TRACE;LuluSoft</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LuluSoftStage|AnyCPU'">
+    <OutputPath>bin\LuluSoftStage\</OutputPath>
+    <DefineConstants>TRACE;LuluSoft</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PdfForgeDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\PdfForgeDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PdfForge</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PdfForgeDevel|AnyCPU'">
+    <OutputPath>bin\PdfForgeDevel\</OutputPath>
+    <DefineConstants>TRACE;PdfForge</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PdfForgeRelease|AnyCPU'">
+    <OutputPath>bin\PdfForgeRelease\</OutputPath>
+    <DefineConstants>TRACE;PdfForge</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PdfForgeStage|AnyCPU'">
+    <OutputPath>bin\PdfForgeStage\</OutputPath>
+    <DefineConstants>TRACE;PdfForge</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PdfSamRelease|AnyCPU'">
+    <OutputPath>bin\PdfSamRelease\</OutputPath>
+    <DefineConstants>TRACE;PdfSam</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PdfSamDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\PdfSamDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PdfSam</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PdfSamStage|AnyCPU'">
+    <OutputPath>bin\PdfSamStage\</OutputPath>
+    <DefineConstants>TRACE;PdfSam</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.5.2\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.9.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RazorEngine.3.9.0\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="EmailManager.cs" />
+    <Compile Include="EmailRepository.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Html.cs" />
+    <Compile Include="Links.cs" />
+    <Compile Include="Models\CreatePasswordNotification.cs" />
+    <Compile Include="Models\EmailChangeConfirmationNotification.cs" />
+    <Compile Include="Models\EmailChangeNotification.cs" />
+    <Compile Include="Models\EmailConfirmationNotification.cs" />
+    <Compile Include="Models\MergeConfirmationNotification.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\ProductAssignedNotification.cs" />
+    <Compile Include="Models\ProductRenewalOffNotification.cs" />
+    <Compile Include="Models\ProductSuspendNotification.cs" />
+    <Compile Include="Models\RecoverPasswordNotification.cs" />
+    <Compile Include="Models\WelcomeFreeProductNotification.cs" />
+    <Compile Include="Models\WelcomePurchaseNotification.cs" />
+    <Compile Include="Models\XmlNotification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Buttons.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Buttons.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Buttons.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Buttons.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Buttons.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Buttons.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Buttons.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Buttons.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Buttons.sv.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\General.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\General.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\General.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\General.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\General.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\General.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\General.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\General.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\General.sv.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Subjects.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Subjects.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Subjects.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Subjects.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Subjects.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Subjects.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Subjects.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Subjects.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_GlobalResources\Subjects.sv.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.sv.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.sv.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.ru.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.de.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.es.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.fr.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.it.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.ja.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.pt.Designer.cs" />
+    <Compile Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Buttons.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Buttons.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Buttons.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Buttons.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Buttons.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Buttons.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Buttons.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Buttons.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\General.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\General.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\General.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\General.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\General.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\General.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\General.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\General.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Subjects.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Subjects.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Subjects.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Subjects.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Subjects.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Subjects.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Subjects.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_GlobalResources\Subjects.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Buttons.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Buttons.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Buttons.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Buttons.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Buttons.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Buttons.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Buttons.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Buttons.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\General.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\General.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\General.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\General.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\General.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\General.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\General.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\General.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Subjects.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Subjects.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Subjects.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Subjects.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Subjects.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Subjects.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Subjects.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_GlobalResources\Subjects.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ru.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.de.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.es.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.fr.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.it.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.ja.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.pt.Designer.cs" />
+    <Compile Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.ru.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RazorParser.cs" />
+    <Compile Include="SendEmailAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaaS.Common\SaaS.Common.csproj">
+      <Project>{0192b426-b217-4a98-a482-c562b0d2f4f5}</Project>
+      <Name>SaaS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaaS.Data.Entities\SaaS.Data.Entities.csproj">
+      <Project>{E4C589CC-B762-4EF5-A951-F8455314204E}</Project>
+      <Name>SaaS.Data.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaaS.Identity\SaaS.Identity.csproj">
+      <Project>{b92ad5a5-ef14-43ad-90cc-ecea8f2013bd}</Project>
+      <Name>SaaS.Identity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaaS.Common\SaaS.Common.csproj">
+      <Project>{0192b426-b217-4a98-a482-c562b0d2f4f5}</Project>
+      <Name>SaaS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaaS.Data.Entities\SaaS.Data.Entities.csproj">
+      <Project>{E4C589CC-B762-4EF5-A951-F8455314204E}</Project>
+      <Name>SaaS.Data.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaaS.Identity\SaaS.Identity.csproj">
+      <Project>{b92ad5a5-ef14-43ad-90cc-ecea8f2013bd}</Project>
+      <Name>SaaS.Identity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaaS.Common\SaaS.Common.csproj">
+      <Project>{0192b426-b217-4a98-a482-c562b0d2f4f5}</Project>
+      <Name>SaaS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaaS.Data.Entities\SaaS.Data.Entities.csproj">
+      <Project>{E4C589CC-B762-4EF5-A951-F8455314204E}</Project>
+      <Name>SaaS.Data.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaaS.Identity\SaaS.Identity.csproj">
+      <Project>{b92ad5a5-ef14-43ad-90cc-ecea8f2013bd}</Project>
+      <Name>SaaS.Identity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Templates\LuluSoft\AccountCreationCompleteNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\BusinessDownloadNewAccountNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\BusinessDownloadNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\BusinessToPremiumNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\EmailChangeConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\EmailChangeNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\EmailConfirmationLateNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\EmailConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\eSignEmailConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\eSignSignPackageNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\LegacyActivationCreatePasswordNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\LegacyActivationSignInNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\LegacyCreatePasswordReminder.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\MergeConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\MicrotransactionCreatePasswordNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\OSSunsetNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\Partial\Layout.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\PasswordChangedNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\PolicyUpdateNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\ProductAssignedNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\ProductAssignedNotificationCreatePassword.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\ProductEditionAssignedNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\ProductEditionAssignedNotificationCreatePassword.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\ProductRenewalOffNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\ProductSuspendNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\ProductUnassignedNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\RecoverPasswordNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomeFreeProductNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomeNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchaseAnywherePremiumPlanNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchaseBasicPlanNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchaseBusinessPlanNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchaseEnterpriseNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchaseHomeEditionNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchaseHomePlanNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchasePremiumEditionNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchasePremiumPlanNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchaseProEditionNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\AccountCreationCompleteNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\EmailChangeConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\EmailChangeNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\EmailConfirmationCovermountNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\EmailConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\MergeConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\Partial\Layout.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\PasswordChangedNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\ProductAssignedNotificationCreatePassword.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\ProductRenewalOffNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\ProductSuspendNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\ProductUnassignedNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\RecoverPasswordNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\WelcomeFreeProductCovermountNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\WelcomeFreeProductNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfForge\WelcomePurchaseNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\AccountCreationCompleteNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\EmailChangeConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\EmailChangeNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\EmailConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\MergeConfirmationNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\Partial\Layout.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\PasswordChangedNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\ProductAssignedNotificationCreatePassword.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\ProductRenewalOffNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\ProductSuspendNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\ProductUnassignedNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\RecoverPasswordNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\WelcomeFreeProductNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PdfSam\WelcomePurchaseNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\LuluSoft\WelcomePurchaseMigrationFromSuiteNotification.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Buttons.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Buttons.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Buttons.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Buttons.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Buttons.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Buttons.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Buttons.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Buttons.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Buttons.sv.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\General.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\General.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\General.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\General.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\General.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\General.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\General.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\General.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\General.sv.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Subjects.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Subjects.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Subjects.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Subjects.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Subjects.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Subjects.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Subjects.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Subjects.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_GlobalResources\Subjects.sv.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNewAccountNotification\BusinessDownloadNewAccountNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessDownloadNotification\BusinessDownloadNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\BusinessToPremiumNotification\BusinessToPremiumNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationLateNotification\EmailConfirmationLateNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignEmailConfirmationNotification\eSignEmailConfirmationNotification.sv.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\eSignSignPackageNotification\eSignSignPackageNotification.sv.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationCreatePasswordNotification\LegacyActivationCreatePasswordNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyActivationSignInNotification\LegacyActivationSignInNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\LegacyCreatePasswordReminder\LegacyCreatePasswordReminder.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\OSSunset\OSSunset.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PEANCP\ProductEditionAssignedNotificationCreatePassword.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\PolicyUpdateNotification\PolicyUpdateNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductAssignedNotification\ProductAssignedNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductEditionAssignedNotification\ProductEditionAssignedNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomeNotification\WelcomeNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseAnywherePremiumPlanNotification\WelcomePurchaseAnywherePremiumPlanNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBasicPlanNotification\WelcomePurchaseBasicPlanNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseBusinessPlanNotification\WelcomePurchaseBusinessPlanNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEditionNotification\WelcomePurchaseEditionNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseEnterpriseNotification\WelcomePurchaseEnterpriseNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomeEditionNotification\WelcomePurchaseHomeEditionNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseHomePlanNotification\WelcomePurchaseHomePlanNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.resx">
+      <LastGenOutput>WelcomePurchaseMigrationFromSuite1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseMigrationFromSuiteNotification\WelcomePurchaseMigrationFromSuiteNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePlanNotification\WelcomePurchasePlanNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumEditionNotification\WelcomePurchasePremiumEditionNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchasePremiumPlanNotification\WelcomePurchasePremiumPlanNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.de.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.es.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.it.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.resx" />
+    <EmbeddedResource Include="Templates\LuluSoft\App_LocalResources\WelcomePurchaseProEditionNotification\WelcomePurchaseProEditionNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Buttons.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Buttons.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Buttons.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Buttons.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Buttons.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Buttons.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Buttons.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Buttons.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\General.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\General.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\General.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\General.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\General.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\General.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\General.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\General.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Subjects.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Subjects.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Subjects.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Subjects.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Subjects.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Subjects.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Subjects.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_GlobalResources\Subjects.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationCovermountNotification\EmailConfirmationCovermountNotification.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductCovermountNotification\WelcomeFreeProductCovermountNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfForge\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Buttons.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Buttons.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Buttons.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Buttons.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Buttons.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Buttons.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Buttons.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Buttons.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\General.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\General.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\General.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\General.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\General.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\General.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\General.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\General.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Subjects.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Subjects.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Subjects.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Subjects.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Subjects.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Subjects.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Subjects.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_GlobalResources\Subjects.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\AccountCreationCompleteNotification\AccountCreationCompleteNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeConfirmationNotification\EmailChangeConfirmationNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailChangeNotification\EmailChangeNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\EmailConfirmationNotification\EmailConfirmationNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\MergeConfirmationNotification\MergeConfirmationNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\PasswordChangedNotification\PasswordChangedNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductAssignedNotificationCreatePassword\ProductAssignedNotificationCreatePassword.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductRenewalOffNotification\ProductRenewalOffNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductSuspendNotification\ProductSuspendNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\ProductUnassignedNotification\ProductUnassignedNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\RecoverPasswordNotification\RecoverPasswordNotification.ru.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomeFreeProductNotification\WelcomeFreeProductNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.de.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.es.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.fr.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.it.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.ja.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.pt.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.resx" />
+    <EmbeddedResource Include="Templates\PdfSam\App_LocalResources\WelcomePurchaseNotification\WelcomePurchaseNotification.ru.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,35 @@
+<h6 class="account-title">Products</h6>
+<ng-account-menu></ng-account-menu>
+
+<div class="table-responsive">
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Product
+                    <span class="badge table-danger" title="Expired" style="cursor: pointer">&nbsp;</span>
+                    <span class="badge table-primary" title="Free / Trial" style="cursor: pointer">&nbsp;</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-row {{::product.getTableCssClass()}}" ui-sref="account/product({accountId: model.accountId, accountProductId: product.id})"
+                data-ng-repeat="product in model.products | orderBy:'purchaseDate'">
+                <td title="Purchase Date: {{::product.purchaseDate | date : 'yyyy-MM-dd'}}">
+                    <span data-ng-bind="::product.allowed" class="badge badge-secondary"></span>
+                    <span data-ng-bind="::product.name" class="font-italic mb-0" style="font-size: 0.9rem"></span>
+                    <span data-ng-bind="::product.plan" class="badge badge-light"></span>
+                    <span data-ng-product-owner="::product.status"></span>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td data-ng-hide="!model.products || model.products.length">
+                    Oops, no records found!
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>

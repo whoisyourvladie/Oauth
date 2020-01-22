@@ -1,0 +1,35 @@
+﻿@model SaaS.Mailer.Models.ProductRenewalOffNotification
+
+@using SaaS.Mailer;
+@using General = SaaS.Mailer.Templates.PdfSam.App_GlobalResources.General
+@using Buttons = SaaS.Mailer.Templates.PdfSam.App_GlobalResources.Buttons
+@using local = SaaS.Mailer.Templates.PdfSam.App_LocalResources.ProductRenewalOffNotification.ProductRenewalOffNotification
+
+<table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="626" align="center">
+    <tr>
+        <td align="center">
+            <p>@General.Dear @Model.FullName,</p>
+            <p>
+                @Html.Raw(string.Format(local.Prgh_1, "<strong>" + Model.ProductName + "</strong>"))
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="padding-top: 37px; padding-bottom: 30px;">
+
+            <table border="0" cellpadding="0" cellspacing="0" class="emailButton" bgcolor="#79b70e" align="center">
+                <tr>
+                    <td align="left" valign="middle" class="emailButtonContent" style="padding-top: 15px; padding-bottom: 15px; padding-right: 15px;">
+                        <a href="@links.account" target="_blank">
+                            @Buttons.GotoMyAccount
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="padding-bottom: 40px;">@General.yourTeam</td>
+    </tr>
+</table>

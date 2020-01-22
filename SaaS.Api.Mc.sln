@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaaS.Api.Core", "Shared\SaaS.Api.Core\SaaS.Api.Core.csproj", "{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaaS.Api.Mc", "Web.Api\SaaS.Api.Mc\SaaS.Api.Mc.csproj", "{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		LuluSoftDebug|Any CPU = LuluSoftDebug|Any CPU
+		LuluSoftDevel|Any CPU = LuluSoftDevel|Any CPU
+		LuluSoftRelease|Any CPU = LuluSoftRelease|Any CPU
+		LuluSoftStage|Any CPU = LuluSoftStage|Any CPU
+		PdfForgeDebug|Any CPU = PdfForgeDebug|Any CPU
+		PdfForgeDevel|Any CPU = PdfForgeDevel|Any CPU
+		PdfForgeRelease|Any CPU = PdfForgeRelease|Any CPU
+		PdfForgeStage|Any CPU = PdfForgeStage|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.LuluSoftDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.LuluSoftDebug|Any CPU.Build.0 = Debug|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.LuluSoftDevel|Any CPU.ActiveCfg = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.LuluSoftDevel|Any CPU.Build.0 = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.LuluSoftRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.LuluSoftRelease|Any CPU.Build.0 = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.LuluSoftStage|Any CPU.ActiveCfg = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.LuluSoftStage|Any CPU.Build.0 = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.PdfForgeDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.PdfForgeDebug|Any CPU.Build.0 = Debug|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.PdfForgeDevel|Any CPU.ActiveCfg = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.PdfForgeDevel|Any CPU.Build.0 = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.PdfForgeRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.PdfForgeRelease|Any CPU.Build.0 = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.PdfForgeStage|Any CPU.ActiveCfg = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.PdfForgeStage|Any CPU.Build.0 = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{003D88D9-C0AB-4BEE-971E-5D9361A5BBFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.Debug|Any CPU.ActiveCfg = LuluSoftDebug|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.Debug|Any CPU.Build.0 = LuluSoftDebug|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.LuluSoftDebug|Any CPU.ActiveCfg = LuluSoftDebug|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.LuluSoftDebug|Any CPU.Build.0 = LuluSoftDebug|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.LuluSoftDevel|Any CPU.ActiveCfg = LuluSoftDevel|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.LuluSoftDevel|Any CPU.Build.0 = LuluSoftDevel|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.LuluSoftRelease|Any CPU.ActiveCfg = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.LuluSoftRelease|Any CPU.Build.0 = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.LuluSoftStage|Any CPU.ActiveCfg = LuluSoftStage|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.LuluSoftStage|Any CPU.Build.0 = LuluSoftStage|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.PdfForgeDebug|Any CPU.ActiveCfg = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.PdfForgeDebug|Any CPU.Build.0 = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.PdfForgeDevel|Any CPU.ActiveCfg = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.PdfForgeDevel|Any CPU.Build.0 = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.PdfForgeRelease|Any CPU.ActiveCfg = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.PdfForgeRelease|Any CPU.Build.0 = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.PdfForgeStage|Any CPU.ActiveCfg = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.PdfForgeStage|Any CPU.Build.0 = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.Release|Any CPU.ActiveCfg = LuluSoftRelease|Any CPU
+		{CCE67EF5-A900-48CE-BF76-4E858EBF9E88}.Release|Any CPU.Build.0 = LuluSoftRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

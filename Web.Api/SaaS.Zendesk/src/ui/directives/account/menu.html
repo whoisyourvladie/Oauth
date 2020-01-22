@@ -1,0 +1,14 @@
+<div class="btn-group dropleft float-right">
+    <button class="btn btn-secondary dropdown-toggle btn-sm pt-0 pb-0" type="button" id="account-dropdown" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        More
+    </button>
+    <div class="dropdown-menu" aria-labelledby="account-dropdown">
+        <a class="dropdown-item" ui-sref="account({accountId: model.accountId})">Account</a>
+        <a class="dropdown-item" ui-sref="account/sub-emails({accountId: model.accountId})">Previous
+            emails</a>
+        <a class="dropdown-item" ui-sref="account/external-session-tokens({accountId: model.accountId})">Connected
+            accounts</a>
+        <a class="dropdown-item" ui-sref="account/products({accountId: model.accountId})">Products</a>
+    </div>
+</div>

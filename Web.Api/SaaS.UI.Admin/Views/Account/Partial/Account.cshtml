@@ -1,0 +1,72 @@
+﻿@{
+    var routes = new { id = Request["id"] };
+    var isStage = HttpContext.Current.Request.Url.Host.StartsWith("stage", StringComparison.InvariantCultureIgnoreCase);
+}
+
+<div class="row">
+    <div class="col-lg-6">
+        <div data-ng-controller="accountController" data-ng-cloak>
+            <div class="panel panel-default" data-ng-show="model.account && !model.account.isDeleted">
+                <div class="panel-heading clearfix">
+                    <div class="pull-left">
+                        <span data-ng-bind="model.account.firstName"></span>
+                        <span data-ng-bind="model.account.lastName"></span>
+                        <span ng-account-type="model.account.status"></span>
+                        <span ng-account-activated="model.account.status"></span>
+                        (<label data-ng-bind="model.account.email"></label>)
+                    </div>
+
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-cogs"></i> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="@Url.Action("index", "account",routes)"><i class="fa fa-info"></i> Info</a></li>
+                                <li><a href="@Url.Action("password", "account",routes)"><i class="fa fa-key"></i> Password</a></li>
+                                <li><a href="@Url.Action("special", "account",routes)"><i class="fa fa-dollar-sign"></i> Special</a></li>
+                                @*<li><a href="@Url.Action("details", "account")?@Request.QueryString"><i class="fa fa-address-book-o"></i> Details</a></li>*@
+                                <li><a href="@Url.Action("products", "account", routes)"><i class="fab fa-product-hunt"></i> Products</a></li>
+                                <li class="divider"></li>
+                                @if (isStage)
+                                {
+                                    <li>
+                                        <a data-ng-click="delete()">
+                                            <span class="label label-danger">
+                                                <i class="fa fa-trash-o"></i> Delete customer (Stage)
+                                            </span>
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a data-ng-click="deleteGDPR()">
+                                            <span class="label label-danger">
+                                                <i class="fa fa-trash-o"></i> Delete customer (GDPR)
+                                            </span>
+                                        </a>
+                                    </li>
+                                }
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" data-ng-show="model.account && model.account.isDeleted">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <div class="alert alert-info alert-dismissable">
+                        Customer has been successfully deleted.
+                        <a href="@Url.Action("search", "account")" class="btn btn-primary btn-xs btn-space">
+                            <i class='fa fa-search'></i> Search
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

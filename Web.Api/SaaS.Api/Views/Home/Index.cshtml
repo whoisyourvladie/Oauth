@@ -1,0 +1,117 @@
+﻿<h1>Welcome to OAuth.Api (UtcNow: @DateTime.UtcNow)</h1>
+
+<style type="text/css">
+    .false {
+        color: blue;
+    }
+
+    .true {
+        color: red;
+    }
+
+    fieldset {
+        float: left;
+    }
+</style>
+
+<script id="maskTemplate" type="text/html">
+    <p>
+        ${key} (${value}):<b class="${is}">${is}</b>
+    </p>
+</script>
+
+<fieldset>
+    <legend>Product mask:</legend>
+    <input type="number" id="productMask" min="0" value="0" maxlength="3">
+    <div>
+        <code id="productResult"></code>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Account mask:</legend>
+    <input type="number" id="accountMask" min="0" value="0" maxlength="3">
+    <div>
+        <code id="accountResult"></code>
+    </div>
+</fieldset>
+
+<script type="text/javascript" src="//ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="//ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+
+
+<script type="text/javascript">
+
+    var productMaskEnum = {
+        none: 0,
+        isDisabled: 1 << 0,
+        isExpired: 1 << 1,
+        isTrial: 1 << 2,
+        isFree: 1 << 3,
+        isMinor: 1 << 4,
+        isActive: 1 << 5,
+        isPPC: 1 << 6,
+        isUpgradable: 1 << 7,
+        isNew: 1 << 8,
+        isPaymentFailed: 1 << 9,
+        isRenewal: 1 << 10,
+        isOwner: 1 << 11,
+        isNotAbleToRenewCreditCartExpired: 1 << 12,
+        isRefund: 1 << 13,
+        isChargeback: 1 << 14,
+        isUpgraded: 1 << 15,
+        isManualCancelled: 1 << 16,
+        isNotSupportedClient: 1 << 17,
+        isBusiness: 1 << 18
+    };
+    var accountMaskEnum = {
+        none: 0,
+        isActivated: 1 << 0,
+        isAnonymous: 1 << 1,
+        isBusiness: 1 << 2,
+        isPreview: 1 << 3
+    };
+
+    (function () {
+
+        var buildValues = function (source, dest, mask) {
+
+            var items = [];
+            var val = source.val();
+            var value = parseInt(val);
+
+            for (var key in mask) {
+
+                if (!mask[key])
+                    continue;
+
+                items.push({
+                    key: key,
+                    value: mask[key],
+                    is: (value & mask[key]) > 0
+                });
+            }
+
+            dest.html($("#maskTemplate").tmpl(items));
+        };
+
+        var productMask = $('#productMask');
+        var accountMask = $('#accountMask');
+
+        var productResult = $('#productResult');
+        var accountResult = $('#accountResult');
+
+        productMask.change(function () {
+
+            buildValues(productMask, productResult, productMaskEnum);
+        });
+        accountMask.change(function () {
+
+            buildValues(accountMask, accountResult, accountMaskEnum);
+        });
+
+        productMask.trigger('change');
+        accountMask.trigger('change');
+
+    })();
+
+</script>

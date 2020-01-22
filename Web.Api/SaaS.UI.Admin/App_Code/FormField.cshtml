@@ -1,0 +1,73 @@
+﻿@helper AutoCompleteForm()
+{
+    <form id="autoCompleteForm" autocomplete="on" style="position:absolute; top:-5000px">
+        <input type="text" name="firstName" autocomplete="on">
+        <input type="text" name="lastName" autocomplete="on">
+        <input type="email" name="email" autocomplete="on">
+        <input type="password" name="password" autocomplete="on">
+    </form>
+}
+@helper Login()
+{
+    <div data-ng-form-validation-group>
+        <label>Login *</label>
+        <input type="text" name="login" placeholder="Login *" data-ng-model="model.login" data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" required>
+        <span data-ng-required-error>Enter a login</span>
+    </div>
+}
+@helper Password()
+{
+    <div data-ng-form-validation-group>
+        <label>Password *</label>
+        <input type="password" name="password" placeholder="Password *" data-ng-model="model.password" data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" required>
+        <span data-ng-required-error>Enter a password</span>
+    </div>
+}
+@helper CurrentPassword()
+{
+    <div data-ng-form-validation-group>
+        <label>Current Password *</label>
+        <input type="password" name="currentPassword" placeholder="Current Password *" data-ng-model="model.currentPassword" data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" required>
+        <span data-ng-required-error>Enter your current password</span>
+    </div>
+}
+@helper NewPassword()
+{
+    <div data-ng-form-validation-group>
+        <label>Password *</label>
+        <input type="password" name="password" placeholder="Password *" data-ng-model="model.password" data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" ng-password-pattern="model.password" required>
+        <span data-ng-required-error>Enter a new password</span>
+    </div>
+}
+@helper ConfirmPassword()
+{
+    <div data-ng-form-validation-group>
+        <label>Confirm Password *</label>
+        <input type="password" name="confirmPassword" placeholder="Confirm Password *" data-ng-model="model.confirmPassword" data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" ng-match="model.password" required>
+        <span data-ng-required-error>Confirm your password</span>
+        <span data-ng-match-error>Your passwords do not match</span>
+    </div>
+}
+@helper Currency()
+{
+    <div class="form-select" data-ng-form-validation-group>
+        <label>Currency *</label>
+        <select name="currency" data-ng-model="model.currency" data-ng-options="currency.iso3 as currency.name for currency in currencies"></select>
+    </div>
+}
+@helper ngCloak()
+{
+    <style type="text/css">
+        [ng-cloak], [data-ng-cloak] {
+            visibility: hidden !important;
+        }
+
+        .ng-hide {
+            display: none !important;
+        }
+
+        .ng-show {
+            display: block !important;
+        }
+    </style>
+}

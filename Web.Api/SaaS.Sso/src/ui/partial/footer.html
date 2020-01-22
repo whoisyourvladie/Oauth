@@ -1,0 +1,24 @@
+<div class="row justify-content-between">
+    <div class="col-2">
+        <div class="lang-switcher dropdown">
+            <a class="dropdown-toggle" id="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                {{currentLanguageTitle()}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown">
+                <a class="dropdown-item" data-ng-click="changeLanguage('en')"
+                    data-ng-hide="model.locale==='en'">English</a>
+                <a class="dropdown-item" data-ng-click="changeLanguage('fr')"
+                    data-ng-hide="model.locale==='fr'">Français</a>
+                <a class="dropdown-item" data-ng-click="changeLanguage('de')"
+                    data-ng-hide="model.locale==='de'">Deutsch‬</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-10">
+        <ul>
+            <li><a target="_blank" href="{{$brand.current()  + '.link.privacy'|translate }}" translate="Privacy Policy"></a></li>
+            <li><a target="_blank" href="{{$brand.current()  + '.link.terms'|translate }}" translate="Terms of Use"></a></li>
+            <li><a target="_blank" href="{{$brand.current()  + '.link.eula'|translate }}" translate="EULA"></a></li>
+        </ul>
+    </div>
+</div>

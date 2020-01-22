@@ -1,0 +1,56 @@
+﻿@model SaaS.Mailer.Models.Notification
+
+@using SaaS.Mailer;
+@using General = SaaS.Mailer.Templates.PdfSam.App_GlobalResources.General
+@using Buttons = SaaS.Mailer.Templates.PdfSam.App_GlobalResources.Buttons
+@using local = SaaS.Mailer.Templates.PdfSam.App_LocalResources.WelcomePurchaseNotification.WelcomePurchaseNotification
+
+<table cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" width="626" align="center">
+    <tr>
+        <td align="center">
+            <p>@General.Dear @Model["fullName"],</p>
+            <p>
+                @General.Welcome_Prgh_1
+            </p>
+            <p>
+                @local.Prgh_2
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="padding-top: 37px; padding-bottom: 30px;">
+
+            <table border="0" cellpadding="0" cellspacing="0" class="emailButton" bgcolor="#79b70e">
+                <tr>
+                    @*<td align="left" valign="middle" class="emailButtonContent" style="padding-top: 15px; padding-bottom: 15px; padding-right: 15px;">
+                        <a href="@links.Localize(Model["createPasswordLink"])" target="_blank">
+                            @Buttons.CreatePasswordNow
+                        </a>
+                    </td>*@
+                    <td align="center" valign="middle" class="emailButtonContent" style="padding-top: 15px; padding-bottom: 15px; padding-right: 15px; padding-left: 15px;">
+                        <a href="@links.Localize(Model["createPasswordLink"])" target="_blank">
+                            @Buttons.CreatePasswordNow
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-bottom: 15px;">
+            <p>
+                @local.Prgh_3
+            </p>
+            <p>
+                <a href="@links.getTrial">@Buttons.DownloadDeskApp</a>
+            </p>
+            <p>
+                @local.Prgh_4
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="padding-bottom: 40px;">@General.yourTeam</td>
+    </tr>
+</table>

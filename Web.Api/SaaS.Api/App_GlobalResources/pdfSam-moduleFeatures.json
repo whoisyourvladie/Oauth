@@ -1,0 +1,208 @@
+﻿{
+  "latestVersion": "6.9.99.99999",
+  "modules": [
+    {
+      "name": "view",
+      "features": [
+        { "name": "View" },
+        { "name": "View.DocumentViewRotate" },
+        { "name": "View.Layout.DocumentLayoutSingle" },
+        { "name": "View.Layout.DocumentLayoutContinuous" },
+        { "name": "View.Layout.DocumentLayoutFacing" },
+        { "name": "View.Layout.DocumentLayoutFacingContinuous" },
+        { "name": "View.Layout.FullScreenMode" },
+        { "name": "View.FitPage" },
+        { "name": "View.FitWidth" },
+        { "name": "View.ActualSize" },
+        { "name": "View.SideBySideView.OpenDocuments" },
+        { "name": "View.SideBySideView.SynchronousScrolling" },
+        { "name": "View.SideBySideView.ChangeDocuments" },
+        { "name": "View.Product.Options" },
+        { "name": "View.Product.Report" },
+        { "name": "View.Product.Updates" },
+        { "name": "View.Product.AboutPlugins" },
+        { "name": "View.Product.About" },
+        { "name": "View.Activate.Activate" },
+        { "name": "View.Activate.LicenseInformation" },
+        { "name": "View.Help.Support" },
+        { "name": "View.Help.UserGuide" },
+        { "name": "View.Help.GettingStarted" },
+        { "name": "View.Snapshot" },
+        { "name": "View.SendByEmail" },
+        { "name": "AxView.SendByEmail" },
+        { "name": "View.GoToPrevPage" },
+        { "name": "View.GoToNextPage" },
+        { "name": "View.GotoPage" },
+        { "name": "View.IncreaseDocumentViewZoom" },
+        { "name": "View.DecreaseDocumentViewZoom" },
+        { "name": "View.Search" },
+        { "name": "Print" },
+        { "name": "Print.Print" },
+        { "name": "AxView.Print" },
+        { "name": "Edit.Pages.MovePages" },
+        { "name": "Edit.Pages.RotatePages" },
+        { "name": "Edit.Pages.SplitPages" },
+        { "name": "Create.CombineFiles" },
+        { "name": "Create.BatchImport" },
+        { "name": "Forms.HighlightFormField" },
+        { "name": "Forms.Import" },
+        { "name": "Forms.Export" },
+        { "name": "Forms.Reset" },
+        { "name": "UM" },        
+        { "name": "Save" },
+        { "name": "SaveAs" },
+        { "name": "AxView.SaveAs" },
+        { "name": "View.Send" },
+        { "name": "View.Batch" }
+      ]
+    },
+    {
+      "name": "create",
+      "features": [
+        { "name": "Create" },
+        { "name": "Create.NewFile" },
+        { "name": "Create.PDFFromAnyFile" },
+        { "name": "Create.PDFFromClipboard" },
+        { "name": "Create.BatchConvert" },
+        { "name": "Create.PDFFromScanner" }
+      ]
+    },
+    {
+      "name": "convert",
+      "features": [
+        { "name": "Convert" },
+        { "name": "Convert.PdfToWord" },
+        { "name": "Convert.PdfToExcel" },
+        { "name": "Convert.PdfToHtml" },
+        { "name": "Convert.PdfToTxt" },
+        { "name": "Convert.PdfToImage" },
+        { "name": "Convert.PdfToRTF" },
+        { "name": "Convert.PdfToPowerPoint" },
+        { "name": "Convert.Batch" }
+      ]
+    },
+    {
+      "name": "edit",
+      "features": [
+        { "name": "Edit" },
+        { "name": "Edit.Pages.DeletePages" },
+        { "name": "Edit.Pages.ReplacePages" },
+        { "name": "Edit.Pages.ExtractPages" },
+        { "name": "Edit.Pages.Background" },
+        { "name": "Edit.Pages.ExtractImages" },
+        { "name": "Edit.Pages.PageSize" },
+        { "name": "Edit.Pages.PageMargin" },
+        { "name": "Edit.Text.TypeText" },
+        { "name": "Edit.Text.Replace" },
+        { "name": "Edit.Optimize.ReduceFileSize" },
+        { "name": "Edit.CutClipboard" },
+        { "name": "Edit.CopyClipboard" },
+        { "name": "Edit.PasteClipboard" },
+        { "name": "Edit.FontBold" },
+        { "name": "Edit.FontItalic" },
+        { "name": "Edit.FontColor" },
+        { "name": "Edit.FontSize" },
+        { "name": "Edit.FontFamily" },
+        { "name": "Edit.Attachments.Add" },
+        { "name": "Edit.Attachments.Delete" },
+        { "name": "Edit.Attachments.EditDescription" },
+        { "name": "Edit.Bookmarks.Add" },
+        { "name": "Edit.Bookmarks.Delete" },
+        { "name": "Edit.Bookmarks.Rename" },
+        { "name": "Edit.Tools.Ruler" },
+        { "name": "Edit.Tools.Grid" }
+      ]
+    },
+    {
+      "name": "insert",
+      "features": [
+        { "name": "Insert" },
+        { "name": "Insert.Pages.InsertPages" },
+        { "name": "Insert.Pages.PagesNumbers" },
+        { "name": "Insert.Pages.InsertPagesNumbers" },
+        { "name": "Insert.Pages.RemovePagesNumbers" },
+        { "name": "Insert.Image.InsertImage" },
+        { "name": "Insert.Image.Crop" },
+        { "name": "Insert.Image.EditClip" },
+        { "name": "Insert.Links.InsertLinks" },
+        { "name": "Insert.Bookmarks.ChangeAction" },
+        { "name": "HeaderFooter" },
+        { "name": "HeaderFooter.Add" },
+        { "name": "HeaderFooter.Remove" },
+        { "name": "Watermark" },
+        { "name": "Watermark.AddWatermark" },
+        { "name": "Watermark.RemoveWatermark" }
+      ]
+    },
+    {
+      "name": "review",
+      "features": [
+        { "name": "Review" },
+        { "name": "Review.Stamps" },
+        { "name": "Review.Stamps.InsertBusinesStamp" },
+        { "name": "Review.Stamps.InsertCustomStamp" },
+        { "name": "Review.Stamps.InsertDynamicStamp" },
+        { "name": "Review.Stamps.CreateStamp" },
+        { "name": "Review.Shapes" },
+        { "name": "Review.Shapes.InsertShape" },
+        { "name": "Review.HideComments" },
+        { "name": "Review.AddStickerNote" },
+        { "name": "Review.Pencil" },
+        { "name": "Review.Attachments" },
+        { "name": "Review.Whiteout" },
+        { "name": "Review.Highlight" },
+        { "name": "Review.Underline" },
+        { "name": "Review.Strikethrough" },
+        { "name": "Compare" },
+        { "name": "Compare.CompareDocuments" },
+        { "name": "Measurements" },
+        { "name": "Review.Measurements" },
+        { "name": "Review.Distance" },
+        { "name": "Review.Perimeter" },
+        { "name": "Review.Area" },
+        { "name": "Review.Calibration" }
+      ]
+    },
+    {
+      "name": "secure",
+      "features": [
+        { "name": "Secure" },
+        { "name": "Secure.Password" },
+        { "name": "Secure.Permissions" },
+        { "name": "Secure.Sign.Sign" },
+        { "name": "Secure.Sign.Appearance" },
+        { "name": "Secure.Sign.Certificate" }
+      ]
+    },
+    {
+      "name": "forms",
+      "features": [
+        { "name": "Forms" },
+        { "name": "Forms.TextFieldCreate" },
+        { "name": "Forms.CheckBoxCreate" },
+        { "name": "Forms.RadioGroupCreate" },
+        { "name": "Forms.ComboBoxCreate" },
+        { "name": "Forms.ListBoxCreate" },
+        { "name": "Forms.PushButtonCreate" },
+        { "name": "Forms.SubmitButtonCreate" },
+        { "name": "Forms.EmailButtonCreate" },
+        { "name": "Forms.PrintButtonCreate" },
+        { "name": "Form.SetTabOrder" },
+        { "name": "Form.SetCalculationOrder" }
+      ]
+    },
+    {
+      "name": "ocr-tess",
+      "features": [
+        { "name": "TESS.OCR" },
+        { "name": "TESS.OCR.Auto" },
+        { "name": "TESS.OCR.Manual" },
+        { "name": "TESS.OCR.PageRange" },
+        { "name": "TESS.OCR.AllDocument" },
+        { "name": "TESS.OCR.Batch" },
+        { "name": "TESS.OCR.FromExternalImage" },
+        { "name": "TESS.OCR.Options" }
+      ]
+    }
+  ]
+}

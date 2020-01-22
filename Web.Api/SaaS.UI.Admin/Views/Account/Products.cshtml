@@ -1,0 +1,231 @@
+﻿@{ var routes = new { id = Request["id"] }; }
+
+@Html.PageHeader("Products")
+@Html.Partial("~/Views/Account/Partial/Account.cshtml")
+
+<div class="row">
+    <div class="col-lg-10">
+        <div data-ng-controller="accountProductsController" data-ng-show="model.account && !model.account.isDeleted" data-ng-cloak>
+            <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    @if (User.IsInRole("admin") || User.IsInRole("manager"))
+                    {
+                        <a class="btn btn-primary btn-sm" href="@Url.Action("add-Product", "account",routes)">
+                            Add product
+                        </a>
+                    }
+                    @Button.Refresh()
+                </div>
+                <div class="panel-body">
+                    <table class="table-responsive table table-striped table-bordered table-hover" data-ng-hide="!model.products">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Product</th>
+                                <th>Owner</th>
+                                <th>Status</th>
+                                <th>Total Licenses</th>
+                                <th>Purchase date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat-start="product in model.products | orderBy:'purchaseDate'">
+                                <td>
+                                    <span data-ng-bind="$index+1"></span>.
+                                </td>
+                                <td>
+                                    <label data-ng-bind="::product.name"></label>
+                                    (<span data-ng-bind="::product.plan"></span>)
+                                    <span data-ng-sp-id="::product.spId"></span>
+                                </td>
+                                <td>
+                                    <span data-ng-bind="::product.ownerEmail"></span>
+                                    <span data-ng-if="::product.isStatus(2048)" class="label label-success">Owner</span>
+                                    <span data-ng-if="::!product.isStatus(2048)" class="label label-danger">Not an owner</span>
+                                </td>
+                                <td>
+                                    <div data-ng-if="product.isStatus(1)">
+                                        <span class="label label-danger">Expired</span>
+                                        <span ng-date="product.endDate"></span>
+                                    </div>
+                                    <div data-ng-if="::product.isStatus(8)">
+                                        <span class="label label-primary">Free</span>
+                                    </div>
+                                    <div data-ng-if="::product.isStatus(4)">
+                                        <span class="label label-primary">Trial</span>
+                                    </div>
+                                    <div data-ng-if="::product.isStatus(64)">
+                                        <span class="label label-info">Purchased</span>
+                                        <span ng-date="::product.purchaseDate"></span>
+                                    </div>
+                                    <div data-ng-if="!product.isStatus(1) && product.isStatus(1024)">
+                                        <div data-ng-if="product.nextRebillDate">
+                                            <span class="label label-success">Renews</span>
+                                            <span data-ng-date="product.nextRebillDate"></span>
+                                        </div>
+                                        <div data-ng-if="!product.nextRebillDate && product.endDate">
+                                            <span class="label label-warning">Expires</span>
+                                            <span data-ng-date="product.endDate"></span>
+                                        </div>
+                                    </div>
+                                    <div data-ng-if="::(product.isStatus(16) && product.minorAllowed)">
+                                        <span class="label label-warning">{{::(product.minorAllowed-product.minorUsed)}} - left</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div data-ng-if="product.isAllowedChangeable()">
+                                        <div data-ng-if="product.allowedEditMode">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control input-sm" data-ng-model="product.allowedEdit" style="width:45px" maxlength="3" />
+                                            </div>
+                                            <button type="button" class="btn btn-primary btn-xs" data-ng-click="allowed(product)">Ok</button>
+                                            <button type="button" class="btn btn-primary btn-xs" data-ng-click="product.allowedEditMode=false">Cancel</button>
+                                        </div>
+                                        <div data-ng-if="!product.allowedEditMode">
+                                            <button type="button" class="btn btn-primary btn-xs btn-space" data-ng-bind="product.allowed" data-ng-click="product.allowedEditShow()"></button>
+                                        </div>
+                                    </div>
+                                    <span data-ng-if="!product.isAllowedChangeable()" data-ng-bind="product.allowed"></span>
+                                </td>
+                                <td>
+                                    <span ng-date="::product.purchaseDate"></span>
+                                </td>
+                                <td>
+                                    <div class="btn-group" data-ng-if="product.isExpandable() || product.isDeactivatable()">
+                                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-gear"></i> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li data-ng-if="product.isExpandable()">
+                                                <a data-ng-click="product.expand()">
+                                                    <span data-ng-hide="product.viewExpanded"><i class="fa fa-plus"></i> Expand</span>
+                                                    <span data-ng-show="product.viewExpanded"><i class="fa fa-minus"></i> Collapse</span>
+                                                </a>
+                                            </li>
+                                            <li data-ng-if="product.isDeactivatable()">
+                                                <a data-ng-click="product.deactivate()">
+                                                    <span class="label label-danger">
+                                                        <i class="fa fa-trash-o"></i> Deactivate product
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-ng-if="product.viewExpanded" data-ng-repeat-end>
+                                <td colspan="7">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="panel panel-default" data-ng-show="product.isRenewal()">
+                                                <div class="panel-heading">
+                                                    Renewal
+                                                </div>
+                                                <div class="panel-body">
+
+                                                    <div class="form-group">
+                                                        <button class="btn btn-primary btn-xs btn-space" data-ng-show="product.nextRebillDate" data-ng-click="product.suspend()">Renew off</button>
+                                                        <button class="btn btn-primary btn-xs btn-space" data-ng-hide="product.nextRebillDate" data-ng-click="product.resume()">Renew on</button>
+                                                    </div>
+                                                    <div class="form-group" data-ng-show="product.nextRebillDate">
+                                                        <label>Next rebill date</label>
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control input-sm" readonly="readonly"
+                                                                   data-uib-datepicker-popup="{{::'yyyy-MM-dd'}}"
+                                                                   data-ng-model="product.nextRebillDateEdit" is-open="isFromOpened"
+                                                                   data-ng-click="isFromOpened=true"
+                                                                   data-datepicker-options="nextRebillDateOptions" />
+
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-primary btn-sm" data-ng-show="product.nextRebillDateEdit"
+                                                                        data-ng-click="product.changeNextRebillDate()">
+                                                                    Change
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                        <label class="label label-danger">Rebill will be processed at UTC 0 (Greenwich Time)</label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default" data-ng-show="product.isEndDate()">
+                                                <div class="panel-heading">
+                                                    Expiry date
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="form-group" data-ng-show="product.endDate">
+                                                        <label>Expiry date</label>
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control input-sm" readonly="readonly"
+                                                                   data-uib-datepicker-popup="{{::'yyyy-MM-dd'}}"
+                                                                   data-ng-model="product.endDateEdit" is-open="isFromOpened"
+                                                                   data-ng-click="isFromOpened=true"
+                                                                   data-datepicker-options="endDateOptions" />
+
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-primary btn-sm" data-ng-show="product.endDateEdit"
+                                                                        data-ng-click="product.changeEndDate()">
+                                                                    Change
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    Assigned Licenses (<span data-ng-bind="product.accounts.length"></span>)
+                                                </div>
+                                                <div class="panel-body">
+                                                    <ul class="list-group" data-ng-show="product.accounts.length">
+                                                        <li class="list-group-item" data-ng-repeat="account in product.accounts | orderBy:'email'">
+                                                            <i class="fa fa-user fa-fw"></i> <span data-ng-bind="::account.email"></span>
+                                                            <a href="@Url.Action("index", "account")?id={{::account.accountId}}" target="_blank" class="btn btn-primary btn-xs btn-space">
+                                                                <i class='fa fa-info'></i> More
+                                                            </a>
+                                                            <button class="pull-right btn btn-primary btn-xs btn-space" data-ng-click="account.unassign()" value="Unassign" data-ng-if="account.isUnAssignable()">
+                                                                Unassign
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6" data-ng-if="product.isAssignable()">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    Unassigned Licenses (<span data-ng-bind="product.allowed - product.used"></span>)
+                                                </div>
+                                                <div class="panel-body">
+                                                    <form name="form" data-ng-init="form=form" data-ng-submit="assign(product, form)" data-ng-loading-form data-ng-autocomplete="off">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                @AccountFormField.AssignEmail()
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group" style="padding-top:5px">
+                                                            <button type="submit" class="btn btn-primary btn-sm" value="Assign"></button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7" data-ng-hide="!model.products || model.products.length">
+                                    Oops, no records found!
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

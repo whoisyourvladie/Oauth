@@ -1,0 +1,16 @@
+<form name="signInForm" data-ng-submit="submit(signInForm)">
+    <img class="rounded mx-auto d-block" src="{{model.logo}}" alt="">
+    <div class="form-group">
+        <label for="validation-login">Login:</label>
+        <input id="validation-login" class="form-control form-control-sm" type="text" placeholder="Login *"
+            data-ng-model="model.login" data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" required
+            autofocus>
+    </div>
+    <div class="form-group">
+        <label for="validation-password">Password:</label>
+        <input id="validation-password" class="form-control form-control-sm" type="password" placeholder="Password *"
+            data-ng-model="model.password" data-ng-model-options="{ updateOn: 'change blur' }" maxlength="100" required>
+    </div>
+    <div class="alert alert-danger" role="alert" data-ng-bind="model.error" data-ng-if="model.error"></div>
+    <button class="btn btn-primary btn-sm" type="submit">Sign in</button>
+</form>
